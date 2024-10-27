@@ -1,0 +1,180 @@
+{
+  "oceanProducts": [
+    {
+      "carrierProductId": "139469935",
+      "carrierProductSequenceId": "1",
+      "productValidFromDate": "2020-08-22",
+      "productValidToDate": "2025-12-31",
+      "numberOfProductLinks": "3",
+      "transportSchedules": [
+        /// other schedules are omitted for brevity
+        {
+          "departureDateTime": "2024-10-29T22:00:00",
+          "arrivalDateTime": "2024-12-16T17:00:00",
+          "facilities": {
+            "collectionOrigin": {
+              "carrierCityGeoID": "0C29F4LWXIITO",
+              "cityName": "Port Tangier Mediterranee",
+              "carrierSiteGeoID": "0KE79A8UG7OPA",
+              "locationName": "Port Tangier Mediterranee",
+              "countryCode": "MA",
+              "locationType": "TERMINAL",
+              "UNLocationCode": "MAPTM",
+              "siteUNLocationCode": "MAPTM",
+              "cityUNLocationCode": "MAPTM"
+            },
+            "deliveryDestination": {
+              "carrierCityGeoID": "25H6O3Q8FNIWV",
+              "cityName": "Tokyo",
+              "carrierSiteGeoID": "3H8TJFJ5XNLW9",
+              "locationName": "Tokyo Vanpool-Mitsubishi OHI CY",
+              "countryCode": "JP",
+              "locationType": "CONTAINER FREIGHT STATION",
+              "UNLocationCode": "JPTYO",
+              "siteUNLocationCode": "JPTYO",
+              "cityUNLocationCode": "JPTYO",
+              "UNRegionCode": "13"
+            }
+          },
+          "firstDepartureVessel": {
+            "vesselIMONumber": "9632143",
+            "carrierVesselCode": "1YM",
+            "vesselName": "MARCHEN MAERSK"
+          },
+          "transitTime": "68820",
+          "transportLegs": [
+            {
+              "departureDateTime": "2024-10-29T22:00:00",
+              "arrivalDateTime": "2024-12-02T00:01:00",
+              "facilities": {
+                "startLocation": {
+                  "carrierCityGeoID": "0C29F4LWXIITO",
+                  "cityName": "Port Tangier Mediterranee",
+                  "carrierSiteGeoID": "0KE79A8UG7OPA",
+                  "locationName": "Port Tangier Mediterranee",
+                  "countryCode": "MA",
+                  "locationType": "TERMINAL",
+                  "UNLocationCode": "MAPTM",
+                  "siteUNLocationCode": "MAPTM",
+                  "cityUNLocationCode": "MAPTM"
+                },
+                "endLocation": {
+                  "carrierCityGeoID": "2IW9P6J7XAW72",
+                  "cityName": "Shanghai",
+                  "carrierSiteGeoID": "37O5HQ17XCL3X",
+                  "locationName": "YANGSHAN SGH GUANDONG TERMINAL",
+                  "countryCode": "CN",
+                  "locationType": "TERMINAL",
+                  "UNLocationCode": "CNSHA",
+                  "siteUNLocationCode": "CNSHA",
+                  "cityUNLocationCode": "CNSHA",
+                  "UNRegionCode": "SH"
+                }
+              },
+              "transport": {
+                "transportMode": "MVS",
+                "vessel": {
+                  "vesselIMONumber": "9632143",
+                  "carrierVesselCode": "1YM",
+                  "vesselName": "MARCHEN MAERSK"
+                },
+                "carrierTradeLaneName": "EUR/FEA",
+                "carrierDepartureVoyageNumber": "442E",
+                "inducementLinkFlag": "false",
+                "carrierServiceCode": "431",
+                "carrierServiceName": "AE5",
+                "linkDirection": "E",
+                "carrierCode": "E1431M",
+                "routingType": "M"
+              }
+            },
+            {
+              "departureDateTime": "2024-12-08T00:30:00",
+              "arrivalDateTime": "2024-12-12T13:00:00",
+              "facilities": {
+                "startLocation": {
+                  "carrierCityGeoID": "2IW9P6J7XAW72",
+                  "cityName": "Shanghai",
+                  "carrierSiteGeoID": "37O5HQ17XCL3X",
+                  "locationName": "YANGSHAN SGH GUANDONG TERMINAL",
+                  "countryCode": "CN",
+                  "locationType": "TERMINAL",
+                  "UNLocationCode": "CNSHA",
+                  "siteUNLocationCode": "CNSHA",
+                  "cityUNLocationCode": "CNSHA",
+                  "UNRegionCode": "SH"
+                },
+                "endLocation": {
+                  "carrierCityGeoID": "0IC9M2CRFNGJJ",
+                  "cityName": "Yokohama",
+                  "carrierSiteGeoID": "1S4EC7JXVH1M7",
+                  "locationName": "Maersk Yokohama terminal",
+                  "countryCode": "JP",
+                  "locationType": "TERMINAL",
+                  "UNLocationCode": "JPYOK",
+                  "siteUNLocationCode": "JPYOK",
+                  "cityUNLocationCode": "JPYOK",
+                  "UNRegionCode": "14"
+                }
+              },
+              "transport": {
+                "transportMode": "MVS",
+                "vessel": {
+                  "vesselIMONumber": "9964156",
+                  "carrierVesselCode": "GE7",
+                  "vesselName": "IRENES RALLY"
+                },
+                "carrierTradeLaneName": "EUR/FEA",
+                "carrierDepartureVoyageNumber": "449W",
+                "inducementLinkFlag": "false",
+                "carrierServiceCode": "165",
+                "carrierServiceName": "SAKURA EXPRESS",
+                "linkDirection": "W",
+                "carrierCode": "2S165M",
+                "routingType": "M"
+              }
+            },
+            {
+              "departureDateTime": "2024-12-16T09:00:00",
+              "arrivalDateTime": "2024-12-16T17:00:00",
+              "facilities": {
+                "startLocation": {
+                  "carrierCityGeoID": "0IC9M2CRFNGJJ",
+                  "cityName": "Yokohama",
+                  "carrierSiteGeoID": "1S4EC7JXVH1M7",
+                  "locationName": "Maersk Yokohama terminal",
+                  "countryCode": "JP",
+                  "locationType": "TERMINAL",
+                  "UNLocationCode": "JPYOK",
+                  "siteUNLocationCode": "JPYOK",
+                  "cityUNLocationCode": "JPYOK",
+                  "UNRegionCode": "14"
+                },
+                "endLocation": {
+                  "carrierCityGeoID": "25H6O3Q8FNIWV",
+                  "cityName": "Tokyo",
+                  "carrierSiteGeoID": "3H8TJFJ5XNLW9",
+                  "locationName": "Tokyo Vanpool-Mitsubishi OHI CY",
+                  "countryCode": "JP",
+                  "locationType": "CONTAINER FREIGHT STATION",
+                  "UNLocationCode": "JPTYO",
+                  "siteUNLocationCode": "JPTYO",
+                  "cityUNLocationCode": "JPTYO",
+                  "UNRegionCode": "13"
+                }
+              },
+              "transport": {
+                "transportMode": "TRK",
+                "carrierTradeLaneName": "EUR/FEA",
+                "inducementLinkFlag": "false",
+                "carrierCode": "525254",
+                "routingType": "I"
+              }
+            }
+          ]
+        }
+      ],
+      "vesselOperatorCarrierCode": "MAEU"
+    }
+  ]
+}

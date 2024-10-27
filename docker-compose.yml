@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgis/postgis:latest
+    container_name: vessel_tracking_db
+    environment:
+      POSTGRES_USER: yourusername
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: vessel_tracking
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
