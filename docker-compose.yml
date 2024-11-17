@@ -15,7 +15,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin4
+    container_name: pgadmin4_manager
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PG_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PG_PASSWORD}
@@ -24,4 +24,4 @@ services:
     depends_on:
       - db
 volumes:
-  db_data:
+  vtracking_db_data:
