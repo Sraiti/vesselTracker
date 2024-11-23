@@ -24,7 +24,7 @@ func fetchMaerskData(
 		(params.Destination),
 	)
 
-	log.Println(url)
+	log.Println("base Url", url)
 
 	req, _ := http.NewRequest("GET", url, nil)
 	req.Header.Add("Consumer-Key", os.Getenv("CONSUMER_KEY"))

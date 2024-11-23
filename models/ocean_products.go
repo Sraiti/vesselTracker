@@ -3,11 +3,9 @@ package models
 import (
 	"encoding/json"
 	"time"
-)
 
-type CustomTime struct {
-	time.Time
-}
+	"github.com/Sraiti/vesselTracker/internal/utils"
+)
 
 type ReducedOceanProduct struct {
 	ID int64
@@ -69,8 +67,8 @@ type OceanProduct struct {
 }
 
 type TransportSchedule struct {
-	DepartureDateTime    CustomTime                  `json:"departureDateTime"`
-	ArrivalDateTime      CustomTime                  `json:"arrivalDateTime"`
+	DepartureDateTime    utils.CustomTime            `json:"departureDateTime"`
+	ArrivalDateTime      utils.CustomTime            `json:"arrivalDateTime"`
 	Facilities           TransportScheduleFacilities `json:"facilities"`
 	FirstDepartureVessel Vessel                      `json:"firstDepartureVessel"`
 	TransportLegs        []TransportLeg              `json:"transportLegs"`
@@ -101,8 +99,8 @@ type Vessel struct {
 }
 
 type TransportLeg struct {
-	DepartureDateTime CustomTime             `json:"departureDateTime"`
-	ArrivalDateTime   CustomTime             `json:"arrivalDateTime"`
+	DepartureDateTime utils.CustomTime       `json:"departureDateTime"`
+	ArrivalDateTime   utils.CustomTime       `json:"arrivalDateTime"`
 	Facilities        TransportLegFacilities `json:"facilities"`
 	Transport         Transport              `json:"transport"`
 }

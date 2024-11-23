@@ -36,13 +36,11 @@ make_request() {
     if [ -n "$data" ]; then
         curl -X $method \
              -H "$CONTENT_TYPE" \
-             -H "$AUTH_HEADER" \
              -d "$data" \
              "$full_url"
     else
         curl -X $method \
              -H "$CONTENT_TYPE" \
-             -H "$AUTH_HEADER" \
              "$full_url"
     fi
     echo ""
@@ -50,9 +48,15 @@ make_request() {
 
 
 search_vessels() {
-    local params="OriginPortUnLoCode=$1&DestinationPortUnLoCode=$2&Destination=$3&Origin=Value&DepartureDate=$4"
+    local params='{
+    "OriginPortUnLoCode": "'${1}'",
+    "Origin": "'${2}'",
+    "DestinationPortUnLoCode": "'${3}'",
+    "Destination": "'${4}'"
+}'
+    echo "data to send $params"
     echo "Searching vessels..."
-    make_request "POST" "/search" "$params"
+    make_request "POST" "/search" "" "$params"
 }
 
 
