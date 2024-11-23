@@ -1,0 +1,7 @@
+1 - save data to database instead of files and create the vessel_location table and make relation to vessel table .
+2 - make endpoints to query the vessel location data .
+3 - make front-end to visualize the data .
+4 - a ranking system for tracking vessels via the ais stream and this system uses two criteria : 
+    - the number of number of appearances of the vessel in the requested schedules 
+    - the last seen date of the vessel 
+    
