@@ -2,6 +2,7 @@ package models
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -9,40 +10,35 @@ type CustomTime struct {
 	time.Time
 }
 
-type ReducedOceanProduct struct {
-	ID int64
-	// maersk product id
-	// might b e empty for other companies
-	CarrierProductID     string
-	productValidToDate   time.Time
-	productValidFromDate time.Time
-	OriginCity           string
-	OriginCountry        string
-	DestinationCity      string
-	DestinationCountry   string
-	VesselCarrierCode    string
-	VesselName           string
-	TransitTime          int32
-	VesselIMONumber      string
-	DepartureDateTime    time.Time
-	ArrivalDateTime      time.Time
+func (ct *CustomTime) UnmarshalJSON(b []byte) error {
+	// Remove quotes from the string
+	str := string(b)
+	str = str[1 : len(str)-1]
+
+	// Try parsing with different time formats
+	formats := []string{
+		"2006-01-02T15:04:05",
+		"2006-01-02T15:04:05Z",
+		"2006-01-02T15:04:05Z07:00",
+		"2006-01-02",
+	}
+
+	var parseErr error
+	for _, format := range formats {
+		t, err := time.Parse(format, str)
+		if err == nil {
+			ct.Time = t
+			return nil
+		}
+		parseErr = err
+	}
+
+	return fmt.Errorf("could not parse time %s: %v", str, parseErr)
 }
 
-// const customTimeLayout = "2006-01-02T15:04:05"
-
-// func (ct *CustomTime) UnmarshalJSON(b []byte) error {
-// str := string(b)
-// // str = str[1 : len(str)-1] // Remove quotes
-
-// t, err := time.Parse(time.RFC1123Z, str)
-
-// if err != nil {
-// 	log.Println(err)
-// 	return err
-// }
-// ct.Time = t
-// return nil
-// }
+func (ct CustomTime) MarshalJSON() ([]byte, error) {
+	return []byte(`"` + ct.Time.Format(time.RFC3339) + `"`), nil
+}
 
 func UnmarshalMaerskPointToPoint(data []byte) (MaerskPointToPoint, error) {
 	var r MaerskPointToPoint
@@ -61,8 +57,8 @@ type MaerskPointToPoint struct {
 type OceanProduct struct {
 	CarrierProductID          string              `json:"carrierProductId"`
 	CarrierProductSequenceID  string              `json:"carrierProductSequenceId"`
-	ProductValidFromDate      string              `json:"productValidFromDate"`
-	ProductValidToDate        string              `json:"productValidToDate"`
+	ProductValidFromDate      CustomTime          `json:"productValidFromDate"`
+	ProductValidToDate        CustomTime          `json:"productValidToDate"`
 	NumberOfProductLinks      string              `json:"numberOfProductLinks"`
 	TransportSchedules        []TransportSchedule `json:"transportSchedules"`
 	VesselOperatorCarrierCode string              `json:"vesselOperatorCarrierCode"`
@@ -72,6 +68,7 @@ type TransportSchedule struct {
 	DepartureDateTime    CustomTime                  `json:"departureDateTime"`
 	ArrivalDateTime      CustomTime                  `json:"arrivalDateTime"`
 	Facilities           TransportScheduleFacilities `json:"facilities"`
+	TransitTime          string                      `json:"transitTime"`
 	FirstDepartureVessel Vessel                      `json:"firstDepartureVessel"`
 	TransportLegs        []TransportLeg              `json:"transportLegs"`
 }
@@ -82,16 +79,16 @@ type TransportScheduleFacilities struct {
 }
 
 type CollectionOrigin struct {
-	CarrierCityGeoID   CarrierCityGeoID `json:"carrierCityGeoID"`
-	CityName           CityName         `json:"cityName"`
-	CarrierSiteGeoID   CarrierSiteGeoID `json:"carrierSiteGeoID"`
-	LocationName       LocationName     `json:"locationName"`
-	CountryCode        CountryCode      `json:"countryCode"`
-	LocationType       LocationType     `json:"locationType"`
-	UNLocationCode     UnLocationCode   `json:"UNLocationCode"`
-	SiteUNLocationCode UnLocationCode   `json:"siteUNLocationCode"`
-	CityUNLocationCode UnLocationCode   `json:"cityUNLocationCode"`
-	UNRegionCode       *string          `json:"UNRegionCode,omitempty"`
+	CarrierCityGeoID   string  `json:"carrierCityGeoID"`
+	CityName           string  `json:"cityName"`
+	CarrierSiteGeoID   string  `json:"carrierSiteGeoID"`
+	LocationName       string  `json:"locationName"`
+	CountryCode        string  `json:"countryCode"`
+	LocationType       string  `json:"locationType"`
+	UNLocationCode     string  `json:"UNLocationCode"`
+	SiteUNLocationCode string  `json:"siteUNLocationCode"`
+	CityUNLocationCode string  `json:"cityUNLocationCode"`
+	UNRegionCode       *string `json:"UNRegionCode,omitempty"`
 }
 
 type Vessel struct {
@@ -124,51 +121,3 @@ type Transport struct {
 	CarrierCode                  string `json:"carrierCode"`
 	RoutingType                  string `json:"routingType"`
 }
-
-type CarrierCityGeoID string
-
-const (
-	The0C29F4Lwxiito CarrierCityGeoID = "0C29F4LWXIITO"
-	The2Iw9P6J7Xaw72 CarrierCityGeoID = "2IW9P6J7XAW72"
-)
-
-type CarrierSiteGeoID string
-
-const (
-	The0Ke79A8Ug7Opa CarrierSiteGeoID = "0KE79A8UG7OPA"
-	The37O5Hq17Xcl3X CarrierSiteGeoID = "37O5HQ17XCL3X"
-)
-
-type CityName string
-
-const (
-	CityNamePortTangierMediterranee CityName = "Port Tangier Mediterranee"
-	Shanghai                        CityName = "Shanghai"
-)
-
-type UnLocationCode string
-
-const (
-	Cnsha UnLocationCode = "CNSHA"
-	Maptm UnLocationCode = "MAPTM"
-)
-
-type CountryCode string
-
-const (
-	CN CountryCode = "CN"
-	Ma CountryCode = "MA"
-)
-
-type LocationName string
-
-const (
-	LocationNamePortTangierMediterranee LocationName = "Port Tangier Mediterranee"
-	YangshanSghGuandongTerminal         LocationName = "YANGSHAN SGH GUANDONG TERMINAL"
-)
-
-type LocationType string
-
-const (
-	Terminal LocationType = "TERMINAL"
-)

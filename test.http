@@ -1,0 +1,44 @@
+### Test search endpoint with valid parameters
+POST http://localhost:3058/search
+Content-Type: application/json
+
+{
+    "OriginPortUnLoCode": "MAPTM",
+    "DestinationPortUnLoCode": "CNSGH", 
+    "Origin": "Port Tangier Mediterranee",
+    "Destination": "Shanghai",
+    "DepartureDate": "2024-04-01T00:00:00"
+}
+
+### Test search endpoint with invalid port codes
+POST http://localhost:3058/search
+Content-Type: application/json
+
+{
+    "OriginPortUnLoCode": "INVALID",
+    "DestinationPortUnLoCode": "INVALID",
+    "Origin": "Invalid City",
+    "Destination": "Invalid City",
+    "DepartureDate": "2024-04-01T00:00:00"
+}
+
+### Test search endpoint with missing parameters
+POST http://localhost:3058/search
+Content-Type: application/json
+
+{
+    "OriginPortUnLoCode": "CNSHA",
+    "Origin": "Shanghai"
+}
+
+### Test search endpoint with invalid date format
+POST http://localhost:3058/search
+Content-Type: application/json
+
+{
+    "OriginPortUnLoCode": "CNSHA",
+    "DestinationPortUnLoCode": "MAPTM",
+    "Origin": "Shanghai", 
+    "Destination": "Port Tangier Mediterranee",
+    "DepartureDate": "invalid-date"
+}

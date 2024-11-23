@@ -1,0 +1,47 @@
+{
+  "reducedProducts": [
+    {
+      "ID": 0,
+      "CarrierProductID": "162112595",
+      "OriginCity": "Shanghai",
+      "OriginName": "YANGSHAN SGH GUANDONG TERMINAL",
+      "OriginCountry": "CN",
+      "OriginPortUnLoCode": "CNSHA",
+      "OriginCarrierSiteGeoID": "37O5HQ17XCL3X",
+      "OriginCarrierCityGeoID": "2IW9P6J7XAW72",
+      "DestinationCity": "Port Tangier Mediterranee",
+      "DestinationName": "Tanger Med 2",
+      "DestinationCountry": "MA",
+      "DestinationPortUnLoCode": "MAPTM",
+      "DestinationCarrierSiteGeoID": "CDQYK28YV7BKN",
+      "DestinationCarrierCityGeoID": "0C29F4LWXIITO",
+      "DepartureVesselCarrierCode": "772",
+      "DepartureVesselName": "ESTELLE MAERSK",
+      "DepartureVesselIMONumber": "9321495",
+      "DepartureDateTime": "2024-11-27T06:00:00Z",
+      "ArrivalDateTime": "2025-01-04T00:01:00Z",
+      "TransitTime": 54361,
+      "TransportLegs": [
+        {
+          "DepartureDateTime": "2024-11-27T06:00:00Z",
+          "ArrivalDateTime": "2025-01-04T00:01:00Z",
+          "VesselCarrierCode": "772",
+          "VesselName": "ESTELLE MAERSK",
+          "VesselIMONumber": "9321495",
+          "OriginCity": "Shanghai",
+          "OriginName": "YANGSHAN SGH GUANDONG TERMINAL",
+          "OriginCountry": "CN",
+          "OriginPortUnLoCode": "CNSHA",
+          "OriginCarrierSiteGeoID": "37O5HQ17XCL3X",
+          "OriginCarrierCityGeoID": "2IW9P6J7XAW72",
+          "DestinationCity": "Port Tangier Mediterranee",
+          "DestinationName": "Tanger Med 2",
+          "DestinationCountry": "MA",
+          "DestinationPortUnLoCode": "MAPTM",
+          "DestinationCarrierSiteGeoID": "CDQYK28YV7BKN",
+          "DestinationCarrierCityGeoID": "0C29F4LWXIITO"
+        }
+      ]
+    }
+  ]
+}

@@ -30,8 +30,8 @@ func fetchMaerskData(
 	req.Header.Add("Consumer-Key", os.Getenv("CONSUMER_KEY"))
 
 	res, err := http.DefaultClient.Do(req)
-	if err != nil {
 
+	if err != nil {
 		log.Println(err)
 		return models.MaerskPointToPoint{}, err
 	}

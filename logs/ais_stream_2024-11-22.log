@@ -1,0 +1,2951 @@
+{
+  "event_type": "startup",
+  "message": "Starting AIS stream manager",
+  "mmsi_count": 4,
+  "mmsis": [
+    "219835000",
+    "219614000",
+    "219018692",
+    "220010000"
+  ],
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:13+01:00",
+  "uptime": "17.958µs"
+}
+{
+  "event_type": "connection_attempt",
+  "message": "Attempting to connect to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:13+01:00",
+  "uptime": "504.416µs",
+  "url": "wss://stream.aisstream.io/v0/stream"
+}
+{
+  "event_type": "connection_success",
+  "message": "Successfully connected to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:13+01:00",
+  "uptime": "542.906708ms"
+}
+{
+  "event_type": "subscription_success",
+  "message": "Successfully subscribed to AIS stream",
+  "mmsi_count": 4,
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:13+01:00",
+  "uptime": "545.20575ms"
+}
+{
+  "count": 4,
+  "event_type": "database_success",
+  "message": "Updated tracked vessels in database",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:13+01:00",
+  "uptime": "588.281708ms"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234164940049000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 1,
+    "messages_saved": 1,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:24+01:00",
+  "uptime": "11.947300625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234186542584000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 2,
+    "messages_saved": 2,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:09:46+01:00",
+  "uptime": "33.544186166s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234219984028000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 3,
+    "messages_saved": 3,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:10:19+01:00",
+  "uptime": "1m6.985637208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234246486998000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 4,
+    "messages_saved": 4,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:10:46+01:00",
+  "uptime": "1m33.487995458s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234306295347000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 5,
+    "messages_saved": 5,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:11:46+01:00",
+  "uptime": "2m33.296192583s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234366389410000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 6,
+    "messages_saved": 6,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:12:46+01:00",
+  "uptime": "3m33.390160708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234400093191000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 7,
+    "messages_saved": 7,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:13:20+01:00",
+  "uptime": "4m7.093351541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234400484871000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 8,
+    "messages_saved": 8,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:13:20+01:00",
+  "uptime": "4m7.486511s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234426374683000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 9,
+    "messages_saved": 9,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:13:46+01:00",
+  "uptime": "4m33.375399583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.799990225555078,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 9,
+    "messages_saved": 9,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:14:13+01:00",
+  "uptime": "5m0.002256833s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234486345425000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 10,
+    "messages_saved": 10,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:14:46+01:00",
+  "uptime": "5m33.346594166s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234524912008000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 11,
+    "messages_saved": 11,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:15:24+01:00",
+  "uptime": "6m11.913026041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234546819912000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 12,
+    "messages_saved": 12,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:15:46+01:00",
+  "uptime": "6m33.81979125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234580053967000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 13,
+    "messages_saved": 13,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:16:20+01:00",
+  "uptime": "7m7.053545041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234606829018000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 14,
+    "messages_saved": 14,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:16:46+01:00",
+  "uptime": "7m33.829487125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234666830255000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 15,
+    "messages_saved": 15,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:17:46+01:00",
+  "uptime": "8m33.831407083s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234726846509000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 16,
+    "messages_saved": 16,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:18:46+01:00",
+  "uptime": "9m33.846155416s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.5999957353447005,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 16,
+    "messages_saved": 16,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:19:13+01:00",
+  "uptime": "10m0.001610083s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234759981168000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 17,
+    "messages_saved": 17,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:19:19+01:00",
+  "uptime": "10m6.980713541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234760646808000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 18,
+    "messages_saved": 18,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:19:20+01:00",
+  "uptime": "10m7.646260916s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234786999031000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 19,
+    "messages_saved": 19,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:19:47+01:00",
+  "uptime": "10m33.999085416s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234846853567000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 20,
+    "messages_saved": 20,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:20:46+01:00",
+  "uptime": "11m33.854516458s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234852163881000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 21,
+    "messages_saved": 21,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:20:52+01:00",
+  "uptime": "11m39.163048375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234886173888000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 22,
+    "messages_saved": 22,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:21:26+01:00",
+  "uptime": "12m13.173316708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234906979300000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 23,
+    "messages_saved": 23,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:21:46+01:00",
+  "uptime": "12m33.962663833s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234940049853000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 24,
+    "messages_saved": 24,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:22:20+01:00",
+  "uptime": "13m7.021325416s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732234966697737000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 25,
+    "messages_saved": 25,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:22:46+01:00",
+  "uptime": "13m33.667253791s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235026901719000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 26,
+    "messages_saved": 26,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:23:46+01:00",
+  "uptime": "14m33.869648583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.7333310461394624,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 26,
+    "messages_saved": 26,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:24:13+01:00",
+  "uptime": "15m0.001222333s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235086732939000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 27,
+    "messages_saved": 27,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:24:46+01:00",
+  "uptime": "15m33.708360208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235120034756000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 28,
+    "messages_saved": 28,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:25:20+01:00",
+  "uptime": "16m7.003088125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235120672051000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 29,
+    "messages_saved": 29,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:25:20+01:00",
+  "uptime": "16m7.640927041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235146754300000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 30,
+    "messages_saved": 30,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:25:46+01:00",
+  "uptime": "16m33.723562541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235206413115000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 31,
+    "messages_saved": 31,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:26:46+01:00",
+  "uptime": "17m33.3820625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235213064803000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 32,
+    "messages_saved": 32,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:26:53+01:00",
+  "uptime": "17m40.0314515s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235273216208000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 33,
+    "messages_saved": 33,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:27:53+01:00",
+  "uptime": "18m40.185155666s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235300044121000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 34,
+    "messages_saved": 34,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:28:20+01:00",
+  "uptime": "19m7.012842791s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235332976122000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 35,
+    "messages_saved": 35,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:28:52+01:00",
+  "uptime": "19m39.943723333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.749993394079728,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 35,
+    "messages_saved": 35,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:29:13+01:00",
+  "uptime": "20m0.004561416s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235393046320000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 36,
+    "messages_saved": 36,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:29:53+01:00",
+  "uptime": "20m40.011609875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235453034269000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 37,
+    "messages_saved": 37,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:30:53+01:00",
+  "uptime": "21m39.999143291s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235480080162000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 38,
+    "messages_saved": 38,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:31:20+01:00",
+  "uptime": "22m7.047629041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235480544720000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 39,
+    "messages_saved": 39,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:31:20+01:00",
+  "uptime": "22m7.509622125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235512895805000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 40,
+    "messages_saved": 40,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:31:52+01:00",
+  "uptime": "22m39.859613125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235560614815000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 41,
+    "messages_saved": 41,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:32:40+01:00",
+  "uptime": "23m27.579166083s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235572907191000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 42,
+    "messages_saved": 42,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:32:52+01:00",
+  "uptime": "23m39.870699333s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235606709896000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 43,
+    "messages_saved": 43,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:33:26+01:00",
+  "uptime": "24m13.674244541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235633219005000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 44,
+    "messages_saved": 44,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:33:53+01:00",
+  "uptime": "24m40.183082666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.7599986149796498,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 44,
+    "messages_saved": 44,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:34:13+01:00",
+  "uptime": "25m0.001214708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235660041420000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 45,
+    "messages_saved": 45,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:34:20+01:00",
+  "uptime": "25m7.007204333s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235692610300000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 46,
+    "messages_saved": 46,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:34:52+01:00",
+  "uptime": "25m39.573860208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235752146139000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 47,
+    "messages_saved": 47,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:35:52+01:00",
+  "uptime": "26m39.147136625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235812245641000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 48,
+    "messages_saved": 48,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:36:52+01:00",
+  "uptime": "27m39.24792775s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235839991854000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 49,
+    "messages_saved": 49,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:37:19+01:00",
+  "uptime": "28m6.993637875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235840502733000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 50,
+    "messages_saved": 50,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:37:20+01:00",
+  "uptime": "28m7.505145208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235872283240000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 51,
+    "messages_saved": 51,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:37:52+01:00",
+  "uptime": "28m39.285105041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235926453448000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 52,
+    "messages_saved": 52,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:38:46+01:00",
+  "uptime": "29m33.455416375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235932185250000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 53,
+    "messages_saved": 53,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:38:52+01:00",
+  "uptime": "29m39.187422333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.76666594977718,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 53,
+    "messages_saved": 53,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:39:12+01:00",
+  "uptime": "30m0.000756291s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235966684904000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 54,
+    "messages_saved": 54,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:39:26+01:00",
+  "uptime": "30m13.689898875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732235992500787000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 55,
+    "messages_saved": 55,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:39:52+01:00",
+  "uptime": "30m39.503645375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236020001946000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 56,
+    "messages_saved": 56,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:40:20+01:00",
+  "uptime": "31m7.015334125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236052200401000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 57,
+    "messages_saved": 57,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:40:52+01:00",
+  "uptime": "31m39.202898916s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236112086652000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 58,
+    "messages_saved": 58,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:41:52+01:00",
+  "uptime": "32m39.089461916s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236172032561000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 59,
+    "messages_saved": 59,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:42:52+01:00",
+  "uptime": "33m39.034610708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236200010374000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 60,
+    "messages_saved": 60,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:43:20+01:00",
+  "uptime": "34m7.012607583s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236200473169000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 61,
+    "messages_saved": 61,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:43:20+01:00",
+  "uptime": "34m7.476131458s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236232054853000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 62,
+    "messages_saved": 62,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:43:52+01:00",
+  "uptime": "34m39.057018666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.7714276564372617,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 62,
+    "messages_saved": 62,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:44:13+01:00",
+  "uptime": "35m0.0011095s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236292146990000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 63,
+    "messages_saved": 63,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:44:52+01:00",
+  "uptime": "35m39.149456875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236298679242000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 64,
+    "messages_saved": 64,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:44:58+01:00",
+  "uptime": "35m45.68146625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236327347926000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 65,
+    "messages_saved": 65,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:45:27+01:00",
+  "uptime": "36m14.350069791s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236358580221000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 66,
+    "messages_saved": 66,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:45:58+01:00",
+  "uptime": "36m45.58354875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236380001524000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 67,
+    "messages_saved": 67,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:46:20+01:00",
+  "uptime": "37m7.005409958s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236419615957000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 68,
+    "messages_saved": 68,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:46:59+01:00",
+  "uptime": "37m46.618011666s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236479309438000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 69,
+    "messages_saved": 69,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:47:59+01:00",
+  "uptime": "38m46.312389041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236539320254000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 70,
+    "messages_saved": 70,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:48:59+01:00",
+  "uptime": "39m46.32493375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.7499961518313787,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 70,
+    "messages_saved": 70,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:49:13+01:00",
+  "uptime": "40m0.005304291s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236560078234000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 71,
+    "messages_saved": 71,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:49:20+01:00",
+  "uptime": "40m7.080310208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236560622857000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 72,
+    "messages_saved": 72,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:49:20+01:00",
+  "uptime": "40m7.626220708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236599122352000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 73,
+    "messages_saved": 73,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:49:59+01:00",
+  "uptime": "40m46.12451375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236659009948000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 74,
+    "messages_saved": 74,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:50:59+01:00",
+  "uptime": "41m46.012145541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236664467117000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 75,
+    "messages_saved": 75,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:51:04+01:00",
+  "uptime": "41m51.469338666s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236689751220000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 76,
+    "messages_saved": 76,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:51:29+01:00",
+  "uptime": "42m16.752950791s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236724559882000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 77,
+    "messages_saved": 77,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:52:04+01:00",
+  "uptime": "42m51.562932958s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236740029041000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 78,
+    "messages_saved": 78,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:52:20+01:00",
+  "uptime": "43m7.030239458s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236784570007000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 79,
+    "messages_saved": 79,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:53:04+01:00",
+  "uptime": "43m51.573023583s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236844575122000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 80,
+    "messages_saved": 80,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:54:04+01:00",
+  "uptime": "44m51.57683375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.777775011664551,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 80,
+    "messages_saved": 80,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:54:13+01:00",
+  "uptime": "45m0.004252666s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236904683466000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 81,
+    "messages_saved": 81,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:55:04+01:00",
+  "uptime": "45m51.689590166s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236920003424000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 82,
+    "messages_saved": 82,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:55:20+01:00",
+  "uptime": "46m7.00605925s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236920526938000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 83,
+    "messages_saved": 83,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:55:20+01:00",
+  "uptime": "46m7.529071625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732236964603121000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 84,
+    "messages_saved": 84,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:56:04+01:00",
+  "uptime": "46m51.589533958s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237012211597000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 85,
+    "messages_saved": 85,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:56:52+01:00",
+  "uptime": "47m39.178641291s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237024611969000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 86,
+    "messages_saved": 86,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:57:04+01:00",
+  "uptime": "47m51.578739875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237050718352000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 87,
+    "messages_saved": 87,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:57:30+01:00",
+  "uptime": "48m17.684393041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237084635413000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 88,
+    "messages_saved": 88,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:58:04+01:00",
+  "uptime": "48m51.601841208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237100060025000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 89,
+    "messages_saved": 89,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:58:20+01:00",
+  "uptime": "49m7.026290208s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/01/1732237144627094000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 90,
+    "messages_saved": 90,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:59:04+01:00",
+  "uptime": "49m51.593244458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.7999981987022027,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 90,
+    "messages_saved": 90,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T01:59:13+01:00",
+  "uptime": "50m0.003375416s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237204859725000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 91,
+    "messages_saved": 91,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:00:04+01:00",
+  "uptime": "50m51.829227166s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237264592067000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 92,
+    "messages_saved": 92,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:01:04+01:00",
+  "uptime": "51m51.556201541s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237280025362000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 93,
+    "messages_saved": 93,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:01:20+01:00",
+  "uptime": "52m6.991241125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237280527681000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 94,
+    "messages_saved": 94,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:01:20+01:00",
+  "uptime": "52m7.492638916s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237324587038000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 95,
+    "messages_saved": 95,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:02:04+01:00",
+  "uptime": "52m51.551304833s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237366988863000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 96,
+    "messages_saved": 96,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:02:46+01:00",
+  "uptime": "53m33.952554041s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237384771910000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 97,
+    "messages_saved": 97,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:03:04+01:00",
+  "uptime": "53m51.735258708s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237409783319000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 98,
+    "messages_saved": 98,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:03:29+01:00",
+  "uptime": "54m16.747306166s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237444574130000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 99,
+    "messages_saved": 99,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:04:04+01:00",
+  "uptime": "54m51.537281791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.799998334387905,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 99,
+    "messages_saved": 99,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:04:13+01:00",
+  "uptime": "55m0.00308275s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237460052925000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 100,
+    "messages_saved": 100,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:04:20+01:00",
+  "uptime": "55m7.016929625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237504960546000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 101,
+    "messages_saved": 101,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:05:04+01:00",
+  "uptime": "55m51.92261975s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-22/02/1732237564555779000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:06:04+01:00",
+  "uptime": "56m51.5188435s"
+}
+{
+  "error": "read tcp 192.168.75.90:55609-\u003e5.161.115.209:443: read: operation timed out",
+  "event_type": "websocket_error",
+  "message": "Error reading message",
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-22T02:34:45+01:00",
+  "uptime": "59m21.701178458s"
+}
+{
+  "event_type": "reconnection",
+  "message": "Attempting to reconnect",
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T02:34:45+01:00",
+  "uptime": "59m21.702918333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.6999993912075513,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T03:28:47+01:00",
+  "uptime": "1h0m0.001340666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.5692298766141881,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T08:03:38+01:00",
+  "uptime": "1h5m0.002266916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.4571424807289544,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T10:52:52+01:00",
+  "uptime": "1h10m0.001096208s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.35999980548225,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T10:57:52+01:00",
+  "uptime": "1h15m0.000664791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.2749995082066585,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:02:52+01:00",
+  "uptime": "1h20m0.001904833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.1999998250000254,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:07:52+01:00",
+  "uptime": "1h25m0.000877583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.1333327768810015,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:30:24+01:00",
+  "uptime": "1h30m0.002670083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.0736839025329306,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:35:24+01:00",
+  "uptime": "1h35m0.001684583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 1.019999738518817,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:43:42+01:00",
+  "uptime": "1h40m0.001641125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9714284600419628,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:48:42+01:00",
+  "uptime": "1h45m0.000777583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.927272413200222,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:53:42+01:00",
+  "uptime": "1h50m0.002289958s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.886956303861785,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T11:58:42+01:00",
+  "uptime": "1h55m0.001750708s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8499997978398258,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:03:42+01:00",
+  "uptime": "2h0m0.002076041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8159998214774086,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:16:52+01:00",
+  "uptime": "2h5m0.001692583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7846153193313663,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:21:52+01:00",
+  "uptime": "2h10m0.000668875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7555554087236225,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:26:52+01:00",
+  "uptime": "2h15m0.001584625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7285713693207957,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:31:52+01:00",
+  "uptime": "2h20m0.000714666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7034482151997674,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:36:52+01:00",
+  "uptime": "2h25m0.000847875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.6799998770931955,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:41:52+01:00",
+  "uptime": "2h30m0.001661333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.658064400454755,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:46:52+01:00",
+  "uptime": "2h35m0.001681166s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.6374998941457324,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:51:52+01:00",
+  "uptime": "2h40m0.001624041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.6181817144126492,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T12:56:52+01:00",
+  "uptime": "2h45m0.001891041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.5999999009044281,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:01:52+01:00",
+  "uptime": "2h50m0.001733083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.582857051725611,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:06:52+01:00",
+  "uptime": "2h55m0.001666291s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.5666665769269864,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:11:52+01:00",
+  "uptime": "3h0m0.001782666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.5513512035130828,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:16:52+01:00",
+  "uptime": "3h5m0.002997166s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.536842072320786,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:21:52+01:00",
+  "uptime": "3h10m0.000744875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.5230768485534044,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:26:52+01:00",
+  "uptime": "3h15m0.001733916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.5099999549057616,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:31:52+01:00",
+  "uptime": "3h20m0.001309375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.4975608851403234,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T13:36:52+01:00",
+  "uptime": "3h25m0.002289125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.485714219029771,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:03:52+01:00",
+  "uptime": "3h30m0.002119041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.4744184675908216,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:22:17+01:00",
+  "uptime": "3h35m0.003781125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.46363630496912517,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:27:17+01:00",
+  "uptime": "3h40m0.001715791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.45333327596988376,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:32:17+01:00",
+  "uptime": "3h45m0.001753375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.44347820710586666,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:37:17+01:00",
+  "uptime": "3h50m0.001730541s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.43404252963726336,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:42:17+01:00",
+  "uptime": "3h55m0.0008s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.4249999457178264,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:47:17+01:00",
+  "uptime": "4h0m0.002164333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.41632648332002037,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:52:17+01:00",
+  "uptime": "4h5m0.001716208s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.40799988480691735,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T14:57:17+01:00",
+  "uptime": "4h10m0.004413333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.399999957211351,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:02:17+01:00",
+  "uptime": "4h15m0.001734875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.39230763328448076,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:07:17+01:00",
+  "uptime": "4h20m0.002396333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.38490561454475875,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:24:26+01:00",
+  "uptime": "4h25m0.002210125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3777777291952587,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:29:26+01:00",
+  "uptime": "4h30m0.00214575s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.37090905137731195,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:34:26+01:00",
+  "uptime": "4h35m0.001990333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3642856818966406,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:39:26+01:00",
+  "uptime": "4h40m0.00153625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3578947119263963,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:44:26+01:00",
+  "uptime": "4h45m0.001214708s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3517241048676345,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:49:26+01:00",
+  "uptime": "4h50m0.001663625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3457626801939127,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T15:54:26+01:00",
+  "uptime": "4h55m0.001665916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.33999993634681747,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:01:32+01:00",
+  "uptime": "5h0m0.003644916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3344261983171789,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:06:32+01:00",
+  "uptime": "5h5m0.001750083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.329032226087077,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:12:51+01:00",
+  "uptime": "5h10m0.002352833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3238094965141651,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:17:51+01:00",
+  "uptime": "5h15m0.001616791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.31874997191708154,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:22:51+01:00",
+  "uptime": "5h20m0.001718458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.31384612849437177,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:31:07+01:00",
+  "uptime": "5h25m0.001601916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3090908833899241,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:36:09+01:00",
+  "uptime": "5h30m0.001694291s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.3044775809200771,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:41:37+01:00",
+  "uptime": "5h35m0.002185333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.29999997677881063,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T16:55:01+01:00",
+  "uptime": "5h40m0.001592833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2956521476703447,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T17:00:01+01:00",
+  "uptime": "5h45m0.002191791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2914285532345342,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T17:05:25+01:00",
+  "uptime": "5h50m0.00153375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2873239208446755,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T17:10:25+01:00",
+  "uptime": "5h55m0.001768375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2833333173635919,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T17:30:51+01:00",
+  "uptime": "6h0m0.001337041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2794520321236108,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:28:01+01:00",
+  "uptime": "6h5m0.001894583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2756756550057013,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:33:01+01:00",
+  "uptime": "6h10m0.00185825s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.27199996962364786,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:38:01+01:00",
+  "uptime": "6h15m0.002688875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2684210310225087,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:43:01+01:00",
+  "uptime": "6h20m0.002001416s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2649350400376741,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:48:01+01:00",
+  "uptime": "6h25m0.002628083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2615384377760067,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:53:01+01:00",
+  "uptime": "6h30m0.002396s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.25822782364044455,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T18:58:01+01:00",
+  "uptime": "6h35m0.002710666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.254999975867971,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:03:01+01:00",
+  "uptime": "6h40m0.002757916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.25185182780155696,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:08:01+01:00",
+  "uptime": "6h45m0.00260175s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.24878047184610633,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:13:01+01:00",
+  "uptime": "6h50m0.001639833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2457831115003647,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:18:01+01:00",
+  "uptime": "6h55m0.002263583s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2428571242730315,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:23:01+01:00",
+  "uptime": "7h0m0.002295125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2399999822764719,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:28:01+01:00",
+  "uptime": "7h5m0.002113375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2372092868349599,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:33:01+01:00",
+  "uptime": "7h10m0.001759333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.23448274041159556,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:38:01+01:00",
+  "uptime": "7h15m0.002233625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.23181816745504427,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:43:01+01:00",
+  "uptime": "7h20m0.002091s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2292134634146857,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:48:01+01:00",
+  "uptime": "7h25m0.003592416s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.22666665336574152,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:53:01+01:00",
+  "uptime": "7h30m0.001758083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.22417580317884508,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T19:58:01+01:00",
+  "uptime": "7h35m0.003282083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2217391065874567,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:03:01+01:00",
+  "uptime": "7h40m0.005624166s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.2193548238327974,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:08:01+01:00",
+  "uptime": "7h45m0.002132625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.21702126371395505,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:13:01+01:00",
+  "uptime": "7h50m0.001881916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.21473682081429574,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:18:01+01:00",
+  "uptime": "7h55m0.003525333s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.21249998040831344,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:23:01+01:00",
+  "uptime": "8h0m0.004563416s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.21030926401040123,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:28:01+01:00",
+  "uptime": "8h5m0.002351208s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.20816325019658585,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:33:01+01:00",
+  "uptime": "8h10m0.002284833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.20606059101916813,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:38:01+01:00",
+  "uptime": "8h15m0.002417916s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.20399998983655052,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:43:01+01:00",
+  "uptime": "8h20m0.00163925s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.20198018448446323,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:48:01+01:00",
+  "uptime": "8h25m0.0021845s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.19999998776770664,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 102,
+    "messages_saved": 102,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-22T20:53:17+01:00",
+  "uptime": "8h30m0.002079791s"
+}
