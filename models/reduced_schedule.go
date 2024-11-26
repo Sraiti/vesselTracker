@@ -26,6 +26,7 @@ type ReducedOceanProduct struct {
 	DepartureVesselName        string
 	DepartureVesselIMONumber   string
 	DepartureVesselMMSI        string
+	LastKnownPosition          []float64
 	//time
 	DepartureDateTime CustomTime
 	ArrivalDateTime   CustomTime
@@ -45,6 +46,7 @@ type ReducedTransportLeg struct {
 	VesselName        string
 	VesselIMONumber   string
 	VesselMMSI        string
+	LastKnownPosition []float64
 	//origin
 	OriginCity             string
 	OriginName             string

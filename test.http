@@ -1,4 +1,9 @@
 ### Test search endpoint with valid parameters
+
+ 
+
+
+
 POST http://localhost:3058/search
 Content-Type: application/json
 

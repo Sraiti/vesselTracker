@@ -3,6 +3,9 @@ package api
 import (
 	"database/sql"
 	"encoding/json"
+	"fmt"
+	"os"
+	"strings"
 
 	"log"
 	"net/http"
@@ -11,6 +14,8 @@ import (
 
 	"github.com/Sraiti/vesselTracker/db"
 	"github.com/Sraiti/vesselTracker/models"
+	"github.com/Sraiti/vesselTracker/utils"
+	aisstream "github.com/aisstream/ais-message-models/golang/aisStream"
 )
 
 type FetchParams struct {
@@ -19,6 +24,117 @@ type FetchParams struct {
 	Destination             string
 	Origin                  string
 	DepartureDate           models.CustomTime
+}
+
+type VesselsMessagesSummary struct {
+	EventTypes []string
+	MMSIs      []float64
+	LastEvent  models.CustomTime
+	Count      int
+}
+type VesselMessageSummary struct {
+	EventTypes string
+	MMSIs      float64
+	TimeStamp  models.CustomTime
+}
+
+func getFileContent(filePath string) VesselMessageSummary {
+
+	log.Println("ais_data/" + filePath)
+
+	content, err := os.ReadFile("ais_data/" + filePath)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var packet aisstream.AisStreamMessage
+
+	err = json.Unmarshal(content, &packet)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(packet.MessageType)
+
+	timeStr := packet.MetaData["time_utc"].(string)
+
+	log.Println(timeStr)
+	parsedTime, _ := time.Parse("2006-01-02 15:04:05.999999999 -0700 MST", timeStr)
+	log.Println(parsedTime)
+
+	return VesselMessageSummary{
+		EventTypes: string(packet.MessageType),
+		MMSIs:      packet.MetaData["MMSI_String"].(float64),
+		TimeStamp:  models.CustomTime{Time: parsedTime},
+	}
+
+}
+
+func FilesExaminerHandler(db *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		vesselInfo := map[string]VesselsMessagesSummary{}
+
+		/// reading the files that exists in the folder of ais data and get all the unique mmsi numbers and all the messages types we got and last date we got an event fora each mmsi .
+		files, err := os.ReadDir("ais_data")
+
+		if err != nil {
+			log.Fatal(err)
+		}
+		fileNames := []struct {
+			Name string
+		}{}
+
+		for _, file := range files {
+
+			if file.IsDir() {
+				log.Println("Reading directory:", file.Name())
+				files, err := os.ReadDir("ais_data/" + file.Name())
+				if err != nil {
+					log.Fatal(err)
+				}
+				for _, subFile := range files {
+
+					if subFile.IsDir() {
+
+						subSubFile, err := os.ReadDir("ais_data/" + file.Name() + "/" + subFile.Name())
+						if err != nil {
+							log.Fatal(err)
+						}
+						for _, line := range subSubFile {
+
+							fileNames = append(fileNames, struct {
+								Name string
+							}{Name: line.Name()})
+
+							summary := getFileContent(file.Name() + "/" + subFile.Name() + "/" + line.Name())
+
+							log.Println(summary.TimeStamp)
+
+							vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")] = VesselsMessagesSummary{
+								EventTypes: func(existing []string, new string) []string {
+									for _, v := range existing {
+										if v == new {
+											return existing
+										}
+									}
+									return append(existing, new)
+								}(vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")].EventTypes, summary.EventTypes),
+								MMSIs:     []float64{summary.MMSIs},
+								LastEvent: summary.TimeStamp,
+								Count:     vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")].Count + 1,
+							}
+						}
+					}
+
+				}
+			}
+		}
+
+		json.NewEncoder(w).Encode(vesselInfo)
+	}
 }
 
 func FetchHandler(db *sql.DB) http.HandlerFunc {
@@ -111,92 +227,91 @@ func FetchHandler(db *sql.DB) http.HandlerFunc {
 	}
 }
 
+func GetVesselLastKnownPosition(database *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		mmsi := r.URL.Query().Get("mmsi")
+
+		log.Println("Getting last known position for mmsi:", mmsi)
+
+		var vessel db.Vessel
+
+		vessel, err := db.GetVesselByMMSI(database, mmsi)
+
+		log.Println("Vessel found:", vessel)
+		log.Println("vessel last known position:", vessel.LastKnownPosition)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		json.NewEncoder(w).Encode(vessel.LastKnownPosition)
+	}
+}
+func updateVesselsInDB(database *sql.DB, vessels map[string]db.Vessel) {
+	for _, vessel := range vessels {
+		if err := db.UpsertVessel(database, vessel); err != nil {
+			log.Printf("Error upserting vessel: %v", err)
+		}
+	}
+}
+
 func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoint) []models.ReducedOceanProduct {
 	collectionStart := time.Now()
 
-	// Use a map as a set to collect unique IMO numbers
-	imoSet := make(map[string]db.Vessel)
-
 	// Collect unique IMO numbers
-	for _, product := range data.OceanProducts {
-		for _, schedule := range product.TransportSchedules {
-			if schedule.FirstDepartureVessel.VesselIMONumber != "" {
-				imoSet[schedule.FirstDepartureVessel.VesselIMONumber] = db.Vessel{
-					IMONumber:   schedule.FirstDepartureVessel.VesselIMONumber,
-					Name:        schedule.FirstDepartureVessel.VesselName,
-					CarrierCode: schedule.FirstDepartureVessel.CarrierVesselCode,
-					MMSI:        "",
-				}
-			}
-			for _, leg := range schedule.TransportLegs {
-				if leg.Transport.Vessel.VesselIMONumber != "" {
-					imoSet[leg.Transport.Vessel.VesselIMONumber] = db.Vessel{
-						IMONumber:   leg.Transport.Vessel.VesselIMONumber,
-						Name:        leg.Transport.Vessel.VesselName,
-						CarrierCode: leg.Transport.Vessel.CarrierVesselCode,
-						MMSI:        "",
-					}
-				}
-			}
-		}
-	}
+	imoSet := utils.CollectUniqueVessels(data)
+
 	log.Printf("IMO collection took: %v, Found %d unique IMOs", time.Since(collectionStart), len(imoSet))
-
-	// Create MMSI cache and results channel
 	mmsiStart := time.Now()
-	type mmsiResult struct {
-		vessel db.Vessel
-		err    error
-	}
-	resultChan := make(chan mmsiResult, len(imoSet))
-	mmsiCache := make(map[string]db.Vessel)
 
-	// Launch goroutines for MMSI fetching
-	for imo, vessel := range imoSet {
-		go func(imo string) {
-			start := time.Now()
-			mmsi, err := getVesselMMSIbyIMO(imo)
-			vessel.MMSI = mmsi
-			if err != nil {
-				log.Printf("Error fetching MMSI for IMO %s: %v", imo, err)
-			} else {
-				log.Printf("Fetched MMSI for IMO %s in %v", imo, time.Since(start))
-			}
-			resultChan <- mmsiResult{vessel, err}
-		}(imo)
+	vf := &utils.VesselFetcher{
+		DB:        database,
+		MmsiCache: make(map[string]db.Vessel),
 	}
+	mmsiCache := vf.FetchVesselData(imoSet)
 
-	// Collect results
-	successCount := 0
-	for i := 0; i < len(imoSet); i++ {
-		result := <-resultChan
-		if result.err == nil {
-			mmsiCache[result.vessel.IMONumber] = result.vessel
-			successCount++
-		}
-	}
-	log.Printf("MMSI fetching took: %v, Successfully fetched %d/%d MMSIs",
-		time.Since(mmsiStart), successCount, len(imoSet))
+	log.Printf("Vessel data fetching took: %v", time.Since(mmsiStart))
 
-	// Build reduced products
+	go updateVesselsInDB(database, mmsiCache)
+
+	// Build and return products
 	buildStart := time.Now()
+
+	products := buildReducedProducts(data, mmsiCache)
+
+	log.Printf("Product building took: %v", time.Since(buildStart))
+
+	return products
+
+}
+
+func buildReducedProducts(data models.MaerskPointToPoint, mmsiCache map[string]db.Vessel) []models.ReducedOceanProduct {
 	var reducedProducts []models.ReducedOceanProduct
 
-	// Helper function to safely get MMSI from cache
-	getMMSI := func(imo string) string {
-		return mmsiCache[imo].MMSI
-	}
-
-	go func() {
-		for _, vessel := range mmsiCache {
-			err := db.UpsertVessel(database, vessel)
-			if err != nil {
-				log.Printf("Error upserting vessel: %v", err)
+	getVesselInfo := func(imo string) struct {
+		MMSI     string
+		Position []float64
+	} {
+		if vessel, exists := mmsiCache[imo]; exists {
+			return struct {
+				MMSI     string
+				Position []float64
+			}{
+				MMSI:     vessel.MMSI,
+				Position: vessel.LastKnownPosition,
 			}
 		}
-	}()
+		return struct {
+			MMSI     string
+			Position []float64
+		}{
+			MMSI:     "",
+			Position: nil,
+		}
+	}
 
-	// 7. Build the reduced products using our cached MMSI values
 	for _, product := range data.OceanProducts {
 		for _, schedule := range product.TransportSchedules {
 			reduced := models.ReducedOceanProduct{
@@ -221,7 +336,8 @@ func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoin
 				DepartureVesselName:        schedule.FirstDepartureVessel.VesselName,
 				DepartureVesselIMONumber:   schedule.FirstDepartureVessel.VesselIMONumber,
 				DepartureVesselCarrierCode: schedule.FirstDepartureVessel.CarrierVesselCode,
-				DepartureVesselMMSI:        getMMSI(schedule.FirstDepartureVessel.VesselIMONumber),
+				DepartureVesselMMSI:        getVesselInfo(schedule.FirstDepartureVessel.VesselIMONumber).MMSI,
+				LastKnownPosition:          getVesselInfo(schedule.FirstDepartureVessel.VesselIMONumber).Position,
 				//Transit time
 				TransitTime: func() int32 {
 					if t, err := strconv.Atoi(schedule.TransitTime); err == nil {
@@ -240,7 +356,8 @@ func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoin
 							VesselCarrierCode: leg.Transport.Vessel.CarrierVesselCode,
 							VesselName:        leg.Transport.Vessel.VesselName,
 							VesselIMONumber:   leg.Transport.Vessel.VesselIMONumber,
-							VesselMMSI:        getMMSI(leg.Transport.Vessel.VesselIMONumber),
+							VesselMMSI:        getVesselInfo(leg.Transport.Vessel.VesselIMONumber).MMSI,
+							LastKnownPosition: getVesselInfo(leg.Transport.Vessel.VesselIMONumber).Position,
 							//origin
 							OriginCity:             leg.Facilities.StartLocation.CityName,
 							OriginName:             leg.Facilities.StartLocation.LocationName,
@@ -264,7 +381,6 @@ func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoin
 		}
 	}
 
-	log.Printf("Product building took: %v", time.Since(buildStart))
 	return reducedProducts
 }
 

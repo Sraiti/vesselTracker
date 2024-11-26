@@ -4,19 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 	"strings"
-	"time"
-)
 
-type Vessel struct {
-	ID              int64
-	IMONumber       string
-	MMSI            string
-	Name            string
-	CarrierCode     string
-	AppearanceCount int
-	LastSeen        time.Time
-	CreatedAt       time.Time
-}
+	"github.com/lib/pq"
+)
 
 func UpsertVessel(db *sql.DB, vessel Vessel) error {
 	_, err := db.Exec(`
@@ -82,4 +72,115 @@ func GetTopVessels(db *sql.DB, limit int) ([]Vessel, error) {
 		vessels = append(vessels, v)
 	}
 	return vessels, nil
+}
+
+func GetVesselByMMSI(db *sql.DB, mmsi string) (Vessel, error) {
+
+	var lat float64
+	var lon float64
+
+	var vessel Vessel
+	err := db.QueryRow(`SELECT id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count, last_seen, created_at, ST_Y(last_known_position::geometry) as latitude, ST_X(last_known_position::geometry) as longitude FROM vessels WHERE mmsi = $1`, mmsi).Scan(
+		&vessel.ID,
+		&vessel.IMONumber,
+		&vessel.MMSI,
+		&vessel.Name,
+		&vessel.IsTracked,
+		&vessel.CarrierCode,
+		&vessel.AppearanceCount,
+		&vessel.LastSeen,
+		&vessel.CreatedAt,
+		&lat,
+		&lon,
+	)
+
+	vessel.LastKnownPosition = []float64{lat, lon}
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return Vessel{}, fmt.Errorf("vessel not found")
+		}
+		return Vessel{}, fmt.Errorf("error getting vessel: %w", err)
+	}
+	return vessel, nil
+
+}
+
+func GetVesselByIMO(db *sql.DB, imo string) (Vessel, error) {
+
+	var lat float64
+	var lon float64
+
+	var vessel Vessel
+	err := db.QueryRow(`SELECT id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count, last_seen, created_at, ST_Y(last_known_position::geometry) as latitude, ST_X(last_known_position::geometry) as longitude FROM vessels WHERE imo_number = $1`, imo).Scan(
+		&vessel.ID,
+		&vessel.IMONumber,
+		&vessel.MMSI,
+		&vessel.Name,
+		&vessel.IsTracked,
+		&vessel.CarrierCode,
+		&vessel.AppearanceCount,
+		&vessel.LastSeen,
+		&vessel.CreatedAt,
+		&lat,
+		&lon,
+	)
+
+	vessel.LastKnownPosition = []float64{lat, lon}
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return Vessel{}, fmt.Errorf("vessel not found")
+		}
+		return Vessel{}, fmt.Errorf("error getting vessel: %w", err)
+	}
+	return vessel, nil
+
+}
+func GetVesselsByIMOs(db *sql.DB, imos []string) (map[string]Vessel, error) {
+	// Use a single query with IN clause
+	query := `
+        SELECT imo_number, mmsi, name, carrier_code, last_known_position 
+        FROM vessels 
+        WHERE imo_number = ANY($1)
+    `
+	rows, err := db.Query(query, pq.Array(imos))
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	vessels := make(map[string]Vessel)
+	for rows.Next() {
+		var vessel Vessel
+		err := rows.Scan(
+			&vessel.IMONumber,
+			&vessel.MMSI,
+			&vessel.Name,
+			&vessel.CarrierCode,
+			&vessel.LastKnownPosition,
+		)
+		if err != nil {
+			return nil, err
+		}
+		vessels[vessel.IMONumber] = vessel
+	}
+	return vessels, nil
+}
+
+func updateVesselLastKnownPosition(db *sql.DB, vesselID int, latitude float64, longitude float64) error {
+	_, err := db.Exec(`UPDATE vessels SET last_known_position = ST_Point($2, $3, 4326) WHERE id = $1`, vesselID, latitude, longitude)
+	return err
+}
+
+func GetVesselLastKnownPosition(db *sql.DB, imo string) ([]float64, error) {
+	var lat float64
+	var lon float64
+
+	err := db.QueryRow(`SELECT  ST_Y(last_known_position::geometry) as latitude,
+            ST_X(last_known_position::geometry) as longitude FROM vessels WHERE imo_number = $1`, imo).Scan(&lat, &lon)
+
+	if err == sql.ErrNoRows {
+		return nil, fmt.Errorf("vessel position not found")
+	}
+
+	return []float64{lat, lon}, err
 }

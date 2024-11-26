@@ -14793,3 +14793,688 @@
   "timestamp": "2024-11-23T23:48:38+01:00",
   "uptime": "49.375267834s"
 }
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402159632472000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 3,
+    "messages_saved": 3,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:19+01:00",
+  "uptime": "1m30.60007575s"
+}
+{
+  "event_type": "startup",
+  "message": "Starting AIS stream manager",
+  "mmsi_count": 13,
+  "mmsis": [
+    "219835000",
+    "219614000",
+    "220010000",
+    "219018692",
+    "563032800",
+    "538008134",
+    "538008132",
+    "636092896",
+    "372723000",
+    "255806143",
+    "255826000",
+    "212777000",
+    "255806330"
+  ],
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:50+01:00",
+  "uptime": "18.625µs"
+}
+{
+  "event_type": "connection_attempt",
+  "message": "Attempting to connect to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:50+01:00",
+  "uptime": "556.083µs",
+  "url": "wss://stream.aisstream.io/v0/stream"
+}
+{
+  "event_type": "connection_success",
+  "message": "Successfully connected to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:51+01:00",
+  "uptime": "546.12675ms"
+}
+{
+  "event_type": "subscription_success",
+  "message": "Successfully subscribed to AIS stream",
+  "mmsi_count": 13,
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:51+01:00",
+  "uptime": "546.432541ms"
+}
+{
+  "count": 13,
+  "event_type": "database_success",
+  "message": "Updated tracked vessels in database",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:49:51+01:00",
+  "uptime": "585.9005ms"
+}
+{
+  "event_type": "startup",
+  "message": "Starting AIS stream manager",
+  "mmsi_count": 13,
+  "mmsis": [
+    "219835000",
+    "219614000",
+    "220010000",
+    "219018692",
+    "563032800",
+    "538008134",
+    "538008132",
+    "636092896",
+    "372723000",
+    "255806143",
+    "255826000",
+    "212777000",
+    "255806330"
+  ],
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:06+01:00",
+  "uptime": "18.625µs"
+}
+{
+  "event_type": "connection_attempt",
+  "message": "Attempting to connect to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:06+01:00",
+  "uptime": "421.667µs",
+  "url": "wss://stream.aisstream.io/v0/stream"
+}
+{
+  "event_type": "connection_success",
+  "message": "Successfully connected to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:06+01:00",
+  "uptime": "524.595292ms"
+}
+{
+  "event_type": "subscription_success",
+  "message": "Successfully subscribed to AIS stream",
+  "mmsi_count": 13,
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:06+01:00",
+  "uptime": "525.0115ms"
+}
+{
+  "count": 13,
+  "event_type": "database_success",
+  "message": "Updated tracked vessels in database",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:06+01:00",
+  "uptime": "568.572209ms"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402219504774000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 1,
+    "messages_saved": 1,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:19+01:00",
+  "uptime": "13.151380875s"
+}
+{
+  "event_type": "startup",
+  "message": "Starting AIS stream manager",
+  "mmsi_count": 13,
+  "mmsis": [
+    "219835000",
+    "219614000",
+    "220010000",
+    "219018692",
+    "563032800",
+    "538008134",
+    "538008132",
+    "636092896",
+    "372723000",
+    "255806143",
+    "255826000",
+    "212777000",
+    "255806330"
+  ],
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:39+01:00",
+  "uptime": "8.042µs"
+}
+{
+  "event_type": "connection_attempt",
+  "message": "Attempting to connect to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:39+01:00",
+  "uptime": "324.042µs",
+  "url": "wss://stream.aisstream.io/v0/stream"
+}
+{
+  "event_type": "connection_success",
+  "message": "Successfully connected to AIS stream",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:40+01:00",
+  "uptime": "501.756834ms"
+}
+{
+  "event_type": "subscription_success",
+  "message": "Successfully subscribed to AIS stream",
+  "mmsi_count": 13,
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:40+01:00",
+  "uptime": "502.353334ms"
+}
+{
+  "count": 13,
+  "event_type": "database_success",
+  "message": "Updated tracked vessels in database",
+  "stats": {
+    "errors": 0,
+    "messages_received": 0,
+    "messages_saved": 0,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:40+01:00",
+  "uptime": "538.530459ms"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402245011522000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 1,
+    "messages_saved": 1,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:45+01:00",
+  "uptime": "5.490620667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402248711916000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 2,
+    "messages_saved": 2,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:50:48+01:00",
+  "uptime": "9.191103084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402287696928000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 3,
+    "messages_saved": 3,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:51:27+01:00",
+  "uptime": "48.176367292s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402317087599000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 4,
+    "messages_saved": 4,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:51:57+01:00",
+  "uptime": "1m17.566108375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402337383994000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 5,
+    "messages_saved": 5,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:52:17+01:00",
+  "uptime": "1m37.863321167s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402347875870000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 6,
+    "messages_saved": 6,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:52:27+01:00",
+  "uptime": "1m48.3563495s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402348875645000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 7,
+    "messages_saved": 7,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:52:28+01:00",
+  "uptime": "1m49.35501925s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402352177907000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 8,
+    "messages_saved": 8,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:52:32+01:00",
+  "uptime": "1m52.656702209s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402369318730000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 9,
+    "messages_saved": 9,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:52:49+01:00",
+  "uptime": "2m9.79723775s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402382989149000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 10,
+    "messages_saved": 10,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:53:02+01:00",
+  "uptime": "2m23.4683805s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402407752969000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 11,
+    "messages_saved": 11,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:53:27+01:00",
+  "uptime": "2m48.232532125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402455490564000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 12,
+    "messages_saved": 12,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:54:15+01:00",
+  "uptime": "3m35.975835834s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402467813528000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 13,
+    "messages_saved": 13,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:54:27+01:00",
+  "uptime": "3m48.302775417s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402520565121000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 14,
+    "messages_saved": 14,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:55:20+01:00",
+  "uptime": "4m41.055321959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402529294833000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 15,
+    "messages_saved": 15,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:55:29+01:00",
+  "uptime": "4m49.784535584s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402533090639000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 16,
+    "messages_saved": 16,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:55:33+01:00",
+  "uptime": "4m53.579015292s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 3.199947198204607,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 16,
+    "messages_saved": 16,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:55:39+01:00",
+  "uptime": "5m0.005136667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402580630122000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 17,
+    "messages_saved": 17,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:56:20+01:00",
+  "uptime": "5m41.118980459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402596978578000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 18,
+    "messages_saved": 18,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:56:36+01:00",
+  "uptime": "5m57.467061459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402608916147000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 19,
+    "messages_saved": 19,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:56:48+01:00",
+  "uptime": "6m9.404737167s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402640581938000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 20,
+    "messages_saved": 20,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:57:20+01:00",
+  "uptime": "6m41.071274292s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402656961415000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 21,
+    "messages_saved": 21,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:57:36+01:00",
+  "uptime": "6m57.449778459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402700549365000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 22,
+    "messages_saved": 22,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:20+01:00",
+  "uptime": "7m41.038529834s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402706603062000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 23,
+    "messages_saved": 23,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:26+01:00",
+  "uptime": "7m47.091531459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402707997209000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 24,
+    "messages_saved": 24,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:27+01:00",
+  "uptime": "7m48.485701167s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402713381455000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 25,
+    "messages_saved": 25,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:33+01:00",
+  "uptime": "7m53.869663292s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402717008575000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 26,
+    "messages_saved": 26,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:37+01:00",
+  "uptime": "7m57.497899084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402729145961000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 27,
+    "messages_saved": 27,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:58:49+01:00",
+  "uptime": "8m9.635058584s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402767482828000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 28,
+    "messages_saved": 28,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:59:27+01:00",
+  "uptime": "8m47.971694459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-11-23/23/1732402776908651000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": null,
+  "stats": {
+    "errors": 0,
+    "messages_received": 29,
+    "messages_saved": 29,
+    "reconnects": 0
+  },
+  "timestamp": "2024-11-23T23:59:36+01:00",
+  "uptime": "8m57.397632875s"
+}

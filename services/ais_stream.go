@@ -4,12 +4,15 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"sync/atomic"
 	"time"
 
 	"github.com/Sraiti/vesselTracker/db"
+	"github.com/Sraiti/vesselTracker/models"
+	aisstream "github.com/aisstream/ais-message-models/golang/aisStream"
 	"github.com/gorilla/websocket"
 )
 
@@ -127,7 +130,7 @@ func (a *AISStreamManager) handleMessages() {
 		atomic.AddUint64(&a.stats.messagesReceived, 1)
 
 		// Parse message for logging
-		var msg map[string]interface{}
+		var msg aisstream.AisStreamMessage
 		if err := json.Unmarshal(message, &msg); err != nil {
 			atomic.AddUint64(&a.stats.errors, 1)
 			a.logEvent("parse_error", "Failed to parse message", map[string]interface{}{
@@ -136,42 +139,79 @@ func (a *AISStreamManager) handleMessages() {
 			continue
 		}
 
-		// Create directory structure for current time
-		now := time.Now()
-		dirPath := filepath.Join(
-			"ais_data",
-			now.Format("2006-01-02"),
-			now.Format("15"),
-		)
+		mmsi := fmt.Sprintf("%d", int64(msg.MetaData["MMSI"].(float64)))
 
-		if err := os.MkdirAll(dirPath, 0755); err != nil {
-			atomic.AddUint64(&a.stats.errors, 1)
-			a.logEvent("filesystem_error", "Error creating directory", map[string]interface{}{
-				"error": err.Error(),
-				"path":  dirPath,
-			})
-			continue
+		go a.saveMessageToFile(message, msg)
+
+		log.Printf("Timestamp: %s", msg.MetaData["time_utc"])
+
+		var timestamp models.CustomTime
+		if timestampStr, ok := msg.MetaData["time_utc"]; ok {
+			parsedTime, err := time.Parse("2006-01-02 15:04:05.999999999 -0700 MST", timestampStr.(string))
+			if err != nil {
+				log.Printf("Error parsing timestamp: %s", err)
+			}
+
+			log.Printf("Parsed time: %s", parsedTime)
+			timestamp = models.CustomTime{Time: parsedTime}
 		}
 
-		// Save message to file
-		filename := filepath.Join(dirPath, fmt.Sprintf("%d.json", now.UnixNano()))
-		if err := os.WriteFile(filename, message, 0644); err != nil {
-			atomic.AddUint64(&a.stats.errors, 1)
-			a.logEvent("filesystem_error", "Error writing file", map[string]interface{}{
-				"error":    err.Error(),
-				"filename": filename,
-			})
-			continue
+		log.Printf("Timestamp: %s", timestamp)
+
+		switch msg.MessageType {
+		case aisstream.POSITION_REPORT:
+			log.Printf("Position report received for mmsi %s", mmsi)
+
+			var positionReport aisstream.PositionReport
+			positionReport = *msg.Message.PositionReport
+
+			log.Println("Position report:")
+			log.Printf("Position report for MMSI %s: %+v", mmsi, positionReport)
+
+			go db.InsertPositionReport(a.db, mmsi, positionReport, timestamp)
 		}
 
-		atomic.AddUint64(&a.stats.messagesSaved, 1)
-
-		// Log message details
-		a.logEvent("message_saved", "Successfully saved AIS message", map[string]interface{}{
-			"message_type": msg["messageType"],
-			"filename":     filename,
-		})
 	}
+}
+
+func (a *AISStreamManager) saveMessageToFile(message []byte, msg aisstream.AisStreamMessage) error {
+	// Create directory structure for current time
+	now := time.Now()
+	dirPath := filepath.Join(
+		"ais_data",
+		now.Format("2006-01-02"),
+		now.Format("15"),
+	)
+
+	if err := os.MkdirAll(dirPath, 0755); err != nil {
+		atomic.AddUint64(&a.stats.errors, 1)
+		a.logEvent("filesystem_error", "Error creating directory", map[string]interface{}{
+			"error": err.Error(),
+			"path":  dirPath,
+		})
+		return err
+	}
+
+	// Save message to file
+	filename := filepath.Join(dirPath, fmt.Sprintf("%d.json", now.UnixNano()))
+	if err := os.WriteFile(filename, message, 0644); err != nil {
+		atomic.AddUint64(&a.stats.errors, 1)
+		a.logEvent("filesystem_error", "Error writing file", map[string]interface{}{
+			"error":    err.Error(),
+			"filename": filename,
+		})
+		return err
+	}
+
+	atomic.AddUint64(&a.stats.messagesSaved, 1)
+
+	// Log message details
+	a.logEvent("message_saved", "Successfully saved AIS message", map[string]interface{}{
+		"message_type": msg.MessageType,
+		"filename":     filename,
+	})
+
+	return nil
 }
 
 func (a *AISStreamManager) reconnect() {
