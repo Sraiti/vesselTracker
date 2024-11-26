@@ -25,11 +25,11 @@ func main() {
 	}
 	defer database.Close()
 
-	// Set up HTTP handlers
-	// http.HandleFunc("/fetch", api.FetchHandler(database))
-	// http.HandleFunc("/vessels", api.VesselsHandler(database))
+	// // Set up HTTP handlers
+	// // http.HandleFunc("/fetch", api.FetchHandler(database))
+	// // http.HandleFunc("/vessels", api.VesselsHandler(database))
 
-	// Get MMSIs from your database
+	// // Get MMSIs from your database
 	// vessels, err := db.GetTopVessels(database, 50)
 	// if err != nil {
 	// 	log.Fatal(err)

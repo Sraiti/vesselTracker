@@ -20,6 +20,7 @@ func UpsertVessel(db *sql.DB, vessel Vessel) error {
             appearance_count = vessels.appearance_count + 1,
             last_seen = CURRENT_TIMESTAMP
     `, vessel.IMONumber, vessel.MMSI, vessel.Name, vessel.CarrierCode)
+
 	return err
 }
 
@@ -111,7 +112,15 @@ func GetVesselByIMO(db *sql.DB, imo string) (Vessel, error) {
 	var lon float64
 
 	var vessel Vessel
-	err := db.QueryRow(`SELECT id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count, last_seen, created_at, ST_Y(last_known_position::geometry) as latitude, ST_X(last_known_position::geometry) as longitude FROM vessels WHERE imo_number = $1`, imo).Scan(
+	err := db.QueryRow(`SELECT 
+	id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count,
+	 last_seen, created_at,
+        CASE 
+                WHEN last_known_position IS NOT NULL 
+                THEN ARRAY[ST_Y(last_known_position::geometry), ST_X(last_known_position::geometry)]
+                ELSE NULL 
+            END as last_known_position
+	   FROM vessels WHERE imo_number = $1`, imo).Scan(
 		&vessel.ID,
 		&vessel.IMONumber,
 		&vessel.MMSI,
@@ -138,7 +147,12 @@ func GetVesselByIMO(db *sql.DB, imo string) (Vessel, error) {
 func GetVesselsByIMOs(db *sql.DB, imos []string) (map[string]Vessel, error) {
 	// Use a single query with IN clause
 	query := `
-        SELECT imo_number, mmsi, name, carrier_code, last_known_position 
+        SELECT imo_number, mmsi, name, carrier_code,         
+		CASE 
+                WHEN last_known_position IS NOT NULL 
+                THEN ARRAY[ST_Y(last_known_position::geometry), ST_X(last_known_position::geometry)]
+                 ELSE ARRAY[]::float8[]
+            END as last_known_position 
         FROM vessels 
         WHERE imo_number = ANY($1)
     `
@@ -149,14 +163,16 @@ func GetVesselsByIMOs(db *sql.DB, imos []string) (map[string]Vessel, error) {
 	defer rows.Close()
 
 	vessels := make(map[string]Vessel)
+
 	for rows.Next() {
 		var vessel Vessel
+
 		err := rows.Scan(
 			&vessel.IMONumber,
 			&vessel.MMSI,
 			&vessel.Name,
 			&vessel.CarrierCode,
-			&vessel.LastKnownPosition,
+			pq.Array(&vessel.LastKnownPosition),
 		)
 		if err != nil {
 			return nil, err

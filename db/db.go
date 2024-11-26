@@ -136,10 +136,6 @@ func InitDB() (*sql.DB, error) {
 	return db, nil
 }
 
-type Point struct {
-	Latitude  float64
-	Longitude float64
-}
 type Vessel struct {
 	ID                int       `db:"id"`
 	IMONumber         string    `db:"imo_number"`
