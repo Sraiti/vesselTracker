@@ -1,7 +1,18 @@
-1 - save data to database instead of files and create the vessel_location table and make relation to vessel table .
-2 - make endpoints to query the vessel location data .
-3 - make front-end to visualize the data .
-4 - a ranking system for tracking vessels via the ais stream and this system uses two criteria : 
+1 - save data to database instead of files and create the vessel_location table and make relation to vessel table 
+    PROGRESS :  vessel location tables has been created .
+                and the latest_position column has been added to the vessel table .
+
+2 - use DB as a cache for the vessel data instead of Fetching the mmsi data from the API every time .
+    PROGRESS : the vessel fetcher has been modified to fetch the vessel data from the DB and not the API .
+    KNOWN BUGS : 
+        - Some vessels get fetched by the api even that they are in the DB .
+        - Bad performance for the search endpoint .
+        - workers and http client should be optimized . (goal here to reach the base line of the maersk api)
+
+
+3 - make endpoints to query the vessel location data 
+4 - make front-end to visualize the data 
+5 - a ranking system for tracking vessels via the ais stream and this system uses two criteria : 
     - the number of number of appearances of the vessel in the requested schedules 
     - the last seen date of the vessel 
     
