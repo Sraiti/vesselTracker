@@ -76,12 +76,18 @@ func GetTopVessels(db *sql.DB, limit int) ([]Vessel, error) {
 }
 
 func GetVesselByMMSI(db *sql.DB, mmsi string) (Vessel, error) {
-
-	var lat float64
-	var lon float64
+ 
 
 	var vessel Vessel
-	err := db.QueryRow(`SELECT id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count, last_seen, created_at, ST_Y(last_known_position::geometry) as latitude, ST_X(last_known_position::geometry) as longitude FROM vessels WHERE mmsi = $1`, mmsi).Scan(
+	err := db.QueryRow(`
+	SELECT id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count, last_seen, created_at,
+			CASE 
+                WHEN last_known_position IS NOT NULL 
+                THEN ARRAY[ST_Y(last_known_position::geometry), ST_X(last_known_position::geometry)]
+                 ELSE ARRAY[]::float8[]
+            END as last_known_position 
+	 FROM vessels 
+	 WHERE mmsi = $1`, mmsi).Scan(
 		&vessel.ID,
 		&vessel.IMONumber,
 		&vessel.MMSI,
@@ -91,11 +97,9 @@ func GetVesselByMMSI(db *sql.DB, mmsi string) (Vessel, error) {
 		&vessel.AppearanceCount,
 		&vessel.LastSeen,
 		&vessel.CreatedAt,
-		&lat,
-		&lon,
+		pq.Array(&vessel.LastKnownPosition),
 	)
 
-	vessel.LastKnownPosition = []float64{lat, lon}
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return Vessel{}, fmt.Errorf("vessel not found")
@@ -108,18 +112,15 @@ func GetVesselByMMSI(db *sql.DB, mmsi string) (Vessel, error) {
 
 func GetVesselByIMO(db *sql.DB, imo string) (Vessel, error) {
 
-	var lat float64
-	var lon float64
-
 	var vessel Vessel
 	err := db.QueryRow(`SELECT 
 	id, imo_number, mmsi, name, is_tracked, carrier_code, appearance_count,
 	 last_seen, created_at,
-        CASE 
+    		CASE 
                 WHEN last_known_position IS NOT NULL 
                 THEN ARRAY[ST_Y(last_known_position::geometry), ST_X(last_known_position::geometry)]
-                ELSE NULL 
-            END as last_known_position
+                 ELSE ARRAY[]::float8[]
+            END as last_known_position 
 	   FROM vessels WHERE imo_number = $1`, imo).Scan(
 		&vessel.ID,
 		&vessel.IMONumber,
@@ -130,11 +131,9 @@ func GetVesselByIMO(db *sql.DB, imo string) (Vessel, error) {
 		&vessel.AppearanceCount,
 		&vessel.LastSeen,
 		&vessel.CreatedAt,
-		&lat,
-		&lon,
+		pq.Array(&vessel.LastKnownPosition),
 	)
 
-	vessel.LastKnownPosition = []float64{lat, lon}
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return Vessel{}, fmt.Errorf("vessel not found")
