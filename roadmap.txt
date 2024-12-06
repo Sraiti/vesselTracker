@@ -15,22 +15,42 @@
         ✅ FIXED:    - Bad performance for the search endpoint
         ✅ FIXED:    - Workers and http client should be optimized (goal: reach Maersk API baseline)
 
-3 - make endpoints to query the vessel location data 
+3 - Location Seeder Implementation Details (this data is going to be used for alerting and tracking)
+    ✅ DONE:
+        Performance Metrics:
+            - CSV Processing: ~68ms for 116K records
+            - Database Insertion: ~2.7s total
+            - Total Processing: ~3s for complete operation
+            - Memory Usage: Optimized with pre-allocated slices
+            - Coordinate Parsing: 80% success rate (92.7K/116K)
+        Next Steps:
+            - On-Demand Location Enrichment:
+                * Add Maersk location ID field to locations table
+                * Implement caching mechanism for Maersk IDs
+                * Add API endpoint for manual ID refresh
+                * Optimize Maersk API calls:
+
+4 - make endpoints to query the vessel location data 
     TODO:
         - Design API endpoints for location queries
         - Implement filtering and sorting options
         - Add pagination support (not required yet)
 
-4 - make front-end to visualize the data 
+5 - make front-end to visualize the data 
     TODO:
         - Create vessel tracking dashboard
         - Implement map visualization
         - Add real-time updates
 
-5 - implement ranking system for tracking vessels via the AIS stream using:
+6 - implement ranking system for tracking vessels via the AIS stream using:
     TODO:
         - Track vessel appearance frequency in schedules
         - Monitor last seen dates
         - Create scoring algorithm
         - Implement priority-based tracking
-    
+
+7 - Location Search & Autocomplete Implementation
+    TODO:
+        - Design API endpoints for location search and autocomplete
+        - Implement search and autocomplete functionality
+        - Optimize for performance and efficiency
