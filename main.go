@@ -65,6 +65,8 @@ func main() {
 	// Add a new handler for the POST request
 	http.HandleFunc("/search", api.FetchHandler(database))
 
+	http.HandleFunc("/autocomplete", api.AutoCompleteHandler(database))
+
 	http.HandleFunc("/vessels/route", api.GetVesselRoute(database))
 
 	http.HandleFunc("/vessels/route/geojson", api.GetVesselRouteGeoJSON(database))

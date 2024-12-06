@@ -84,41 +84,6 @@ func (vf *VesselFetcher) FetchVesselData(imoSet map[string]db.Vessel) map[string
 	return vf.MmsiCache
 }
 
-// func (vf *VesselFetcher) enrichVesselsWithPositions(vessels map[string]db.Vessel) {
-// 	// Create a buffered channel for position results
-// 	type positionResult struct {
-// 		imo      string
-// 		position []float64
-// 		err      error
-// 	}
-
-// 	posChan := make(chan positionResult, len(vessels))
-
-// 	// Launch position fetches in parallel
-// 	for imo := range vessels {
-// 		go func(imo string) {
-// 			position, err := db.GetVesselLastKnownPosition(vf.DB, imo)
-// 			posChan <- positionResult{
-// 				imo:      imo,
-// 				position: position,
-// 				err:      err,
-// 			}
-// 		}(imo)
-// 	}
-
-// 	// Collect results
-// 	for i := 0; i < len(vessels); i++ {
-// 		result := <-posChan
-// 		if result.err == nil && result.position != nil {
-// 			if vessel, exists := vessels[result.imo]; exists {
-// 				vessel.LastKnownPosition = result.position
-// 				vessels[result.imo] = vessel
-// 				log.Printf("Found position for vessel IMO %s: %v", result.imo, result.position)
-// 			}
-// 		}
-// 	}
-// }
-
 func (vf *VesselFetcher) performHTTPLookups(httpNeeded []string) {
 	if len(httpNeeded) == 0 {
 		return

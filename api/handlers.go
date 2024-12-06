@@ -206,6 +206,25 @@ func saveScheduleToDB(db *sql.DB, data []models.ReducedOceanProduct) {
 
 }
 
+func AutoCompleteHandler(database *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		text := r.URL.Query().Get("text")
+
+		log.Println("AutoCompleteHandler:", text)
+
+		
+		locations, err := db.AutoComplete(database, text)
+
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		json.NewEncoder(w).Encode(locations)
+	}
+}
+
 func FetchHandler(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		totalStart := time.Now()
