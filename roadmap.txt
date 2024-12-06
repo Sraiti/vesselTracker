@@ -19,7 +19,7 @@
     TODO:
         - Design API endpoints for location queries
         - Implement filtering and sorting options
-        - Add pagination support
+        - Add pagination support (not required yet)
 
 4 - make front-end to visualize the data 
     TODO:

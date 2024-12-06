@@ -5,10 +5,25 @@ Content-Type: application/json
 {
     "OriginPortUnLoCode": "MAPTM",
     "DestinationPortUnLoCode": "CNSGH", 
-    "Origin": "Port Tangier Mediterranee",
+    "Origin": "Agadir",
     "Destination": "Shanghai",
     "DepartureDate": "2024-04-01T00:00:00"
 }
+
+
+
+### Test search endpoint with valid parameters
+POST http://localhost:3058/search
+Content-Type: application/json
+
+{
+    "OriginPortUnLoCode": "USLAX",
+    "DestinationPortUnLoCode": "MAPTM", 
+    "Origin": "Los Angeles",
+    "Destination": "Port Tangier Mediterranee",
+    "DepartureDate": "2024-05-15T00:00:00"
+}
+
 
 ### Test search endpoint with invalid port codes
 POST http://localhost:3058/search

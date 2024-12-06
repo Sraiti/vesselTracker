@@ -5,8 +5,8 @@ type ReducedOceanProduct struct {
 	// maersk product id
 	// might b e empty for other companies
 	CarrierProductID     string
-	productValidToDate   CustomTime
-	productValidFromDate CustomTime
+	ProductValidToDate   CustomTime
+	ProductValidFromDate CustomTime
 	//origin
 	OriginCity             string
 	OriginName             string

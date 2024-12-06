@@ -47,6 +47,18 @@ func InitDB() (*sql.DB, error) {
 			last_known_position GEOGRAPHY(POINT, 4326)
 		);
 
+		CREATE TABLE IF NOT EXISTS locations (
+			id SERIAL PRIMARY KEY,
+			unlocode TEXT NOT NULL,
+			name TEXT NOT NULL,
+			country_code TEXT NOT NULL,
+			location GEOGRAPHY(POINT, 4326),
+			is_airport BOOLEAN DEFAULT FALSE,
+			is_port BOOLEAN DEFAULT FALSE,
+			is_train_station BOOLEAN DEFAULT FALSE,
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			UNIQUE(unlocode, name)  -- composite unique constraint
+		);
 
 		CREATE TABLE IF NOT EXISTS ocean_products (
 			id SERIAL PRIMARY KEY,
@@ -74,7 +86,6 @@ func InitDB() (*sql.DB, error) {
 			transit_time INTEGER,
 			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 		);
-
 		CREATE TABLE IF NOT EXISTS transport_legs (
 			id SERIAL PRIMARY KEY,
 			ocean_product_id INTEGER REFERENCES ocean_products(id) ON DELETE CASCADE,
@@ -110,6 +121,7 @@ func InitDB() (*sql.DB, error) {
 			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 		);
 
+		CREATE INDEX IF NOT EXISTS locations_unlocode_idx ON locations(unlocode);
 		CREATE INDEX IF NOT EXISTS vessel_positions_vessel_id_idx ON vessel_positions(vessel_id);
 		CREATE INDEX IF NOT EXISTS vessel_positions_mmsi_idx ON vessel_positions(mmsi);
 		CREATE INDEX IF NOT EXISTS vessel_positions_timestamp_idx ON vessel_positions(timestamp);
@@ -132,6 +144,14 @@ func InitDB() (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	db.SetMaxOpenConns(25)
+
+	// Set a reasonable idle timeout
+	db.SetConnMaxIdleTime(5 * time.Minute)
+
+	// Pre-create some connections
+	db.SetMaxIdleConns(10)
 
 	return db, nil
 }

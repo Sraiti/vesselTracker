@@ -6,6 +6,7 @@ import (
 
 	"github.com/Sraiti/vesselTracker/api"
 	"github.com/Sraiti/vesselTracker/db"
+	"github.com/Sraiti/vesselTracker/seeder"
 	"github.com/joho/godotenv"
 )
 
@@ -25,11 +26,19 @@ func main() {
 	}
 	defer database.Close()
 
+	log.Println("Seeding locations...")
+	metrics, err := seeder.SeedLocations(database, 12000)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("Seeding completed: %+v", metrics)
+
 	// // Set up HTTP handlers
 	// // http.HandleFunc("/fetch", api.FetchHandler(database))
 	// // http.HandleFunc("/vessels", api.VesselsHandler(database))
 
-	// // Get MMSIs from your database
+	// // // Get MMSIs from your database
 	// vessels, err := db.GetTopVessels(database, 50)
 	// if err != nil {
 	// 	log.Fatal(err)
@@ -53,8 +62,12 @@ func main() {
 	// } else {
 	// 	log.Println("No vessels found, skipping AIS streaming")
 	// }
-	// // Add a new handler for the POST request
+	// Add a new handler for the POST request
 	http.HandleFunc("/search", api.FetchHandler(database))
+
+	http.HandleFunc("/vessels/route", api.GetVesselRoute(database))
+
+	http.HandleFunc("/vessels/route/geojson", api.GetVesselRouteGeoJSON(database))
 
 	http.HandleFunc("/vessels/tracked", api.GetTrackedVesselsHandler(database))
 

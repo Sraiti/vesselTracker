@@ -137,6 +137,75 @@ func FilesExaminerHandler(db *sql.DB) http.HandlerFunc {
 	}
 }
 
+func saveScheduleToDB(db *sql.DB, data []models.ReducedOceanProduct) {
+
+	for _, product := range data {
+
+		validTo := product.ProductValidToDate.Time
+		validFrom := product.ProductValidFromDate.Time
+		var oceanProductID int
+
+		err := db.QueryRow(`
+				INSERT INTO ocean_products (
+					carrier_product_id, product_valid_to_date, product_valid_from_date,
+					origin_city, origin_name, origin_country, origin_port_un_lo_code,
+					origin_carrier_site_geo_id, origin_carrier_city_geo_id,
+					destination_city, destination_name, destination_country,
+					destination_port_un_lo_code, destination_carrier_site_geo_id,
+					destination_carrier_city_geo_id, departure_vessel_carrier_code,
+					departure_vessel_name, departure_vessel_imo_number,
+					departure_vessel_mmsi, departure_date_time, arrival_date_time,
+					transit_time
+				) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 
+						  $15, $16, $17, $18, $19, $20, $21, $22)
+				RETURNING id`,
+			product.CarrierProductID, validTo, validFrom, product.OriginCity,
+			product.OriginName, product.OriginCountry, product.OriginPortUnLoCode,
+			product.OriginCarrierSiteGeoID, product.OriginCarrierCityGeoID,
+			product.DestinationCity, product.DestinationName,
+			product.DestinationCountry, product.DestinationPortUnLoCode,
+			product.DestinationCarrierSiteGeoID, product.DestinationCarrierCityGeoID,
+			product.DepartureVesselCarrierCode, product.DepartureVesselName,
+			product.DepartureVesselIMONumber, product.DepartureVesselMMSI,
+			product.DepartureDateTime.Time, product.ArrivalDateTime.Time,
+			product.TransitTime).Scan(&oceanProductID)
+
+		if err != nil {
+			log.Printf("Error inserting ocean product: %v", err)
+			continue
+		}
+
+		for _, leg := range product.TransportLegs {
+			// Insert ocean product first
+
+			// Insert transport leg linked to ocean product
+			_, err = db.Exec(`
+				INSERT INTO transport_legs (
+					ocean_product_id, departure_date_time, arrival_date_time,
+					vessel_carrier_code, vessel_name, vessel_imo_number, vessel_mmsi,
+					origin_city, origin_name, origin_country, origin_port_un_lo_code,
+					origin_carrier_site_geo_id, origin_carrier_city_geo_id,
+					destination_city, destination_name, destination_country,
+					destination_port_un_lo_code, destination_carrier_site_geo_id,
+					destination_carrier_city_geo_id
+				) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,
+						  $14, $15, $16, $17, $18, $19)`,
+				oceanProductID, leg.DepartureDateTime.Time, leg.ArrivalDateTime.Time,
+				leg.VesselCarrierCode, leg.VesselName, leg.VesselIMONumber,
+				leg.VesselMMSI, leg.OriginCity, leg.OriginName, leg.OriginCountry,
+				leg.OriginPortUnLoCode, leg.OriginCarrierSiteGeoID,
+				leg.OriginCarrierCityGeoID, leg.DestinationCity, leg.DestinationName,
+				leg.DestinationCountry, leg.DestinationPortUnLoCode,
+				leg.DestinationCarrierSiteGeoID, leg.DestinationCarrierCityGeoID)
+
+			if err != nil {
+				log.Printf("Error inserting transport leg: %v", err)
+			}
+		}
+	}
+
+}
+
 func FetchHandler(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		totalStart := time.Now()
@@ -168,6 +237,8 @@ func FetchHandler(db *sql.DB) http.HandlerFunc {
 		processingStart := time.Now()
 		reducedProducts := extractReducedOceanProducts(db, data)
 		log.Printf("Data processing took: %v", time.Since(processingStart))
+
+		saveScheduleToDB(db, reducedProducts)
 
 		// Prepare response
 		response := struct {
@@ -287,6 +358,81 @@ func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoin
 
 }
 
+func GetVesselRoute(database *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		mmsi := r.URL.Query().Get("mmsi")
+
+		log.Println("Getting route for mmsi:", mmsi)
+
+		route, err := db.GetVesselRoute(database, mmsi)
+
+		if err != nil {
+			log.Println(err)
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		log.Println("Route:", route)
+
+		json.NewEncoder(w).Encode(route)
+	}
+}
+
+func GetVesselRouteGeoJSON(database *sql.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		mmsi := r.URL.Query().Get("mmsi")
+
+		positions, err := db.GetVesselRoute(database, mmsi)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		// Define some vibrant colors for variety
+		colors := []string{
+			"#FF0000", // Red
+			"#00FF00", // Green
+			"#0000FF", // Blue
+			"#FF00FF", // Magenta
+			"#00FFFF", // Cyan
+			"#FFA500", // Orange
+			"#9400D3", // Dark Violet
+			"#FF1493", // Deep Pink
+		}
+
+		// Create features slice to store all points
+		features := []map[string]interface{}{}
+
+		// Process each position into a GeoJSON feature
+		for i, pos := range positions {
+			feature := map[string]interface{}{
+				"type": "Feature",
+				"geometry": map[string]interface{}{
+					"type":        "Point",
+					"coordinates": pos,
+				},
+				"properties": map[string]interface{}{
+					"title":         fmt.Sprintf("Point %d", i+1),
+					"marker-color":  colors[2], // Cycle through colors
+					"marker-size":   "medium",
+					"marker-symbol": "circle",
+					"point-number":  i + 1,
+				},
+			}
+			features = append(features, feature)
+		}
+
+		// Create the final GeoJSON structure
+		geojson := map[string]interface{}{
+			"type":     "FeatureCollection",
+			"features": features,
+		}
+
+		json.NewEncoder(w).Encode(geojson)
+	}
+}
+
 func buildReducedProducts(data models.MaerskPointToPoint, mmsiCache map[string]db.Vessel) []models.ReducedOceanProduct {
 	var reducedProducts []models.ReducedOceanProduct
 
@@ -315,6 +461,12 @@ func buildReducedProducts(data models.MaerskPointToPoint, mmsiCache map[string]d
 	for _, product := range data.OceanProducts {
 		for _, schedule := range product.TransportSchedules {
 			reduced := models.ReducedOceanProduct{
+
+				// valid to date
+				ProductValidToDate: models.CustomTime{Time: product.ProductValidToDate.Time},
+				// valid from date
+				ProductValidFromDate: models.CustomTime{Time: product.ProductValidFromDate.Time},
+
 				CarrierProductID:  product.CarrierProductID,
 				DepartureDateTime: models.CustomTime{Time: schedule.DepartureDateTime.Time},
 				ArrivalDateTime:   models.CustomTime{Time: schedule.ArrivalDateTime.Time},

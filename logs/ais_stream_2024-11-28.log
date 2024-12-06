@@ -1,0 +1,518 @@
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9772726995987705,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:18:48+01:00",
+  "uptime": "7h20m0.000799458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9662920767061693,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:38:00+01:00",
+  "uptime": "7h25m0.001641041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9555554879927924,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:43:00+01:00",
+  "uptime": "7h30m0.001919291s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9450549172874662,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:48:00+01:00",
+  "uptime": "7h35m0.000811416s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9347825715104079,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:53:00+01:00",
+  "uptime": "7h40m0.001112375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9247311469457947,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T01:58:00+01:00",
+  "uptime": "7h45m0.001091791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9148935905680369,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:03:00+01:00",
+  "uptime": "7h50m0.000942041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.9052631060710922,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:08:00+01:00",
+  "uptime": "7h55m0.001693666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8958332830904615,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:13:00+01:00",
+  "uptime": "8h0m0.001626375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.886597912619115,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:18:00+01:00",
+  "uptime": "8h5m0.000850041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8775509959732931,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:23:00+01:00",
+  "uptime": "8h10m0.000833791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8686868452172316,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:28:00+01:00",
+  "uptime": "8h15m0.000812083s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8599999683639551,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:33:00+01:00",
+  "uptime": "8h20m0.00111675s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.851485127370593,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:38:00+01:00",
+  "uptime": "8h25m0.000763s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8431372322277412,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:43:00+01:00",
+  "uptime": "8h30m0.000832833s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8349514046632609,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:48:00+01:00",
+  "uptime": "8h35m0.001926458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8269230090785232,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:53:00+01:00",
+  "uptime": "8h40m0.002584041s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.819047598397011,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T02:58:00+01:00",
+  "uptime": "8h45m0.00080575s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8113206884825205,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:03:00+01:00",
+  "uptime": "8h50m0.002606458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.8037382512347491,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:08:00+01:00",
+  "uptime": "8h55m0.002672625s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7962962327554206,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:13:00+01:00",
+  "uptime": "9h0m0.002595375s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7889907721386423,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:18:00+01:00",
+  "uptime": "9h5m0.002250291s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7818181631828826,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:23:00+01:00",
+  "uptime": "9h10m0.000796791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7747747373690228,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:28:00+01:00",
+  "uptime": "9h15m0.001620875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7678571242063276,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:33:00+01:00",
+  "uptime": "9h20m0.000829291s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7610619047467849,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:38:00+01:00",
+  "uptime": "9h25m0.001888541s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7543859100189488,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:43:00+01:00",
+  "uptime": "9h30m0.002503875s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7478260373552583,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:48:00+01:00",
+  "uptime": "9h35m0.002298458s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7413792644258411,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:53:00+01:00",
+  "uptime": "9h40m0.002170166s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7350426909401736,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T03:58:00+01:00",
+  "uptime": "9h45m0.002116125s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.728813505916042,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:03:00+01:00",
+  "uptime": "9h50m0.002603s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7226890387645077,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:08:00+01:00",
+  "uptime": "9h55m0.001838791s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7166666329285896,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:13:00+01:00",
+  "uptime": "10h0m0.001709666s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7107437809954869,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:18:00+01:00",
+  "uptime": "10h5m0.0010665s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.7049180019322776,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:23:00+01:00",
+  "uptime": "10h10m0.001611541s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.6991869637666577,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:28:00+01:00",
+  "uptime": "10h15m0.001499541s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 0.6935483622850256,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 1,
+    "messages_received": 430,
+    "messages_saved": 430,
+    "reconnects": 1
+  },
+  "timestamp": "2024-11-28T04:33:00+01:00",
+  "uptime": "10h20m0.001355083s"
+}
