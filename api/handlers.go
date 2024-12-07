@@ -213,7 +213,6 @@ func AutoCompleteHandler(database *sql.DB) http.HandlerFunc {
 
 		log.Println("AutoCompleteHandler:", text)
 
-		
 		locations, err := db.AutoComplete(database, text)
 
 		if err != nil {
@@ -225,7 +224,7 @@ func AutoCompleteHandler(database *sql.DB) http.HandlerFunc {
 	}
 }
 
-func FetchHandler(db *sql.DB) http.HandlerFunc {
+func FetchHandler(database *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		totalStart := time.Now()
 
@@ -237,9 +236,41 @@ func FetchHandler(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
+		locations, err := db.GetLocations(database, []string{params.OriginPortUnLoCode, params.DestinationPortUnLoCode})
+
+		log.Println("Locations:")
+		log.Println(locations)
+
+		if err != nil {
+
+			log.Println("Error getting locations")
+			log.Println(err)
+		} else if len(locations) != 2 {
+			log.Println("Invalid number of locations")
+			go func() {
+				locationsWithoutMaerskID := []string{}
+
+				for _, location := range locations {
+					if location.MaerskID == "" {
+						locationsWithoutMaerskID = append(locationsWithoutMaerskID, location.Unlocode)
+					}
+				}
+				GetMaerskLocations(database, locationsWithoutMaerskID)
+				if err != nil {
+					log.Println("Error getting Maersk locations")
+					log.Println(err)
+				}
+			}()
+		}
+
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
 		// Fetch data from Maersk API
 		maerskStart := time.Now()
-		data, err := fetchMaerskData(params)
+		data, err := GetMaerskPointToPoint(params, locations)
 		log.Printf("Maersk API fetch took: %v", time.Since(maerskStart))
 
 		if err != nil {
@@ -254,10 +285,10 @@ func FetchHandler(db *sql.DB) http.HandlerFunc {
 
 		// Extract and process data
 		processingStart := time.Now()
-		reducedProducts := extractReducedOceanProducts(db, data)
+		reducedProducts := extractReducedOceanProducts(database, data)
 		log.Printf("Data processing took: %v", time.Since(processingStart))
 
-		saveScheduleToDB(db, reducedProducts)
+		saveScheduleToDB(database, reducedProducts)
 
 		// Prepare response
 		response := struct {

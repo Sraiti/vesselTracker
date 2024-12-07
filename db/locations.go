@@ -2,10 +2,67 @@ package db
 
 import (
 	"database/sql"
+	"log"
 	"time"
 
+	"github.com/Sraiti/vesselTracker/models"
 	"github.com/lib/pq"
 )
+
+func UpsertLocations(db *sql.DB, locations []models.MaerskLocation) error {
+	for _, location := range locations {
+		_, err := db.Exec(`UPDATE locations SET maersk_id = $2 WHERE unlocode = $1`, location.UNLocationCode, location.CarrierGeoID)
+		if err != nil {
+			log.Println("Error upserting location")
+			continue
+		}
+	}
+	log.Println("Upserted locations")
+	return nil
+}
+
+func GetLocations(db *sql.DB, unLoCodes []string) ([]Location, error) {
+	log.Println("Getting locations")
+	log.Println(unLoCodes)
+
+	query := `SELECT id, unlocode, name, country_code, is_airport, is_port, is_train_station, created_at, maersk_id 
+			FROM locations 
+			WHERE unlocode = ANY ($1)`
+
+	rows, err := db.Query(query, pq.Array(unLoCodes))
+
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var locations []Location
+
+	for rows.Next() {
+		var loc Location
+		var maerskID sql.NullString // Use NullString to handle NULL values
+
+		err := rows.Scan(&loc.ID,
+			&loc.Unlocode,
+			&loc.Name,
+			&loc.CountryCode,
+			&loc.IsAirport,
+			&loc.IsPort,
+			&loc.IsTrainStation,
+			&loc.CreatedAt,
+			&maerskID)
+		if err != nil {
+			return nil, err
+		}
+
+		if maerskID.Valid {
+			loc.MaerskID = maerskID.String
+		}
+
+		locations = append(locations, loc)
+	}
+	return locations, nil
+}
 
 func AutoComplete(db *sql.DB, text string) ([]Location, error) {
 	// Query matches start of UNLOCODE, country_code, or name (case-insensitive)
@@ -68,4 +125,5 @@ type Location struct {
 	IsPort         bool      `json:"is_port"`
 	IsTrainStation bool      `json:"is_train_station"`
 	CreatedAt      time.Time `json:"created_at"`
+	MaerskID       string    `json:"maersk_id"`
 }

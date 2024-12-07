@@ -57,7 +57,8 @@ func InitDB() (*sql.DB, error) {
 			is_port BOOLEAN DEFAULT FALSE,
 			is_train_station BOOLEAN DEFAULT FALSE,
 			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-			UNIQUE(unlocode, name)  -- composite unique constraint
+			maersk_id TEXT,
+			UNIQUE(unlocode, name)  -- composite unique constraint,
 		);
 
 		CREATE TABLE IF NOT EXISTS ocean_products (
