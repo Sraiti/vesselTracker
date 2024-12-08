@@ -10,14 +10,39 @@ import (
 )
 
 func UpsertLocations(db *sql.DB, locations []models.MaerskLocation) error {
-	for _, location := range locations {
-		_, err := db.Exec(`UPDATE locations SET maersk_id = $2 WHERE unlocode = $1`, location.UNLocationCode, location.CarrierGeoID)
-		if err != nil {
-			log.Println("Error upserting location")
-			continue
-		}
+	log.Println("Upserting locations")
+
+	// Skip if no locations to update
+	if len(locations) == 0 {
+		return nil
 	}
-	log.Println("Upserted locations")
+
+	// Prepare the bulk update query
+	query := `
+		UPDATE locations 
+		SET maersk_id = tmp.maersk_id 
+		FROM (
+			SELECT unnest($1::text[]) as unlocode,
+				   unnest($2::text[]) as maersk_id
+		) tmp 
+		WHERE locations.unlocode = tmp.unlocode`
+
+	// Prepare the parameter arrays
+	unlocodes := make([]string, len(locations))
+	maerskIDs := make([]string, len(locations))
+
+	for i, loc := range locations {
+		unlocodes[i] = loc.UNLocationCode
+		maerskIDs[i] = loc.CarrierGeoID
+	}
+
+	// Execute the bulk update
+	_, err := db.Exec(query, pq.Array(unlocodes), pq.Array(maerskIDs))
+	if err != nil {
+		log.Printf("Error performing bulk upsert: %v", err)
+		return err
+	}
+
 	return nil
 }
 
@@ -54,6 +79,13 @@ func GetLocations(db *sql.DB, unLoCodes []string) ([]Location, error) {
 		if err != nil {
 			return nil, err
 		}
+
+		log.Println("unlocode")
+		log.Println(loc.Unlocode)
+		log.Println("maerskID")
+		log.Println(maerskID)
+		log.Println("valid")
+		log.Println(maerskID.Valid)
 
 		if maerskID.Valid {
 			loc.MaerskID = maerskID.String

@@ -4,9 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"os"
-	"strings"
-
+ 
 	"log"
 	"net/http"
 	"strconv"
@@ -15,7 +13,6 @@ import (
 	"github.com/Sraiti/vesselTracker/db"
 	"github.com/Sraiti/vesselTracker/models"
 	"github.com/Sraiti/vesselTracker/utils"
-	aisstream "github.com/aisstream/ais-message-models/golang/aisStream"
 )
 
 type FetchParams struct {
@@ -36,105 +33,6 @@ type VesselMessageSummary struct {
 	EventTypes string
 	MMSIs      float64
 	TimeStamp  models.CustomTime
-}
-
-func getFileContent(filePath string) VesselMessageSummary {
-
-	log.Println("ais_data/" + filePath)
-
-	content, err := os.ReadFile("ais_data/" + filePath)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	var packet aisstream.AisStreamMessage
-
-	err = json.Unmarshal(content, &packet)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Println(packet.MessageType)
-
-	timeStr := packet.MetaData["time_utc"].(string)
-
-	log.Println(timeStr)
-	parsedTime, _ := time.Parse("2006-01-02 15:04:05.999999999 -0700 MST", timeStr)
-	log.Println(parsedTime)
-
-	return VesselMessageSummary{
-		EventTypes: string(packet.MessageType),
-		MMSIs:      packet.MetaData["MMSI_String"].(float64),
-		TimeStamp:  models.CustomTime{Time: parsedTime},
-	}
-
-}
-
-func FilesExaminerHandler(db *sql.DB) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-
-		vesselInfo := map[string]VesselsMessagesSummary{}
-
-		/// reading the files that exists in the folder of ais data and get all the unique mmsi numbers and all the messages types we got and last date we got an event fora each mmsi .
-		files, err := os.ReadDir("ais_data")
-
-		if err != nil {
-			log.Fatal(err)
-		}
-		fileNames := []struct {
-			Name string
-		}{}
-
-		for _, file := range files {
-
-			if file.IsDir() {
-				log.Println("Reading directory:", file.Name())
-				files, err := os.ReadDir("ais_data/" + file.Name())
-				if err != nil {
-					log.Fatal(err)
-				}
-				for _, subFile := range files {
-
-					if subFile.IsDir() {
-
-						subSubFile, err := os.ReadDir("ais_data/" + file.Name() + "/" + subFile.Name())
-						if err != nil {
-							log.Fatal(err)
-						}
-						for _, line := range subSubFile {
-
-							fileNames = append(fileNames, struct {
-								Name string
-							}{Name: line.Name()})
-
-							summary := getFileContent(file.Name() + "/" + subFile.Name() + "/" + line.Name())
-
-							log.Println(summary.TimeStamp)
-
-							vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")] = VesselsMessagesSummary{
-								EventTypes: func(existing []string, new string) []string {
-									for _, v := range existing {
-										if v == new {
-											return existing
-										}
-									}
-									return append(existing, new)
-								}(vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")].EventTypes, summary.EventTypes),
-								MMSIs:     []float64{summary.MMSIs},
-								LastEvent: summary.TimeStamp,
-								Count:     vesselInfo[strings.Trim(fmt.Sprintf("%d", int(summary.MMSIs)), " ")].Count + 1,
-							}
-						}
-					}
-
-				}
-			}
-		}
-
-		json.NewEncoder(w).Encode(vesselInfo)
-	}
 }
 
 func saveScheduleToDB(db *sql.DB, data []models.ReducedOceanProduct) {
@@ -238,19 +136,18 @@ func FetchHandler(database *sql.DB) http.HandlerFunc {
 
 		locations, err := db.GetLocations(database, []string{params.OriginPortUnLoCode, params.DestinationPortUnLoCode})
 
-		log.Println("Locations:")
-		log.Println(locations)
-
 		if err != nil {
 
 			log.Println("Error getting locations")
 			log.Println(err)
-		} else if len(locations) != 2 {
+		} else if len(locations) != 2 || locations[0].MaerskID == "" || locations[1].MaerskID == "" {
 			log.Println("Invalid number of locations")
 			go func() {
 				locationsWithoutMaerskID := []string{}
 
 				for _, location := range locations {
+					log.Println("location")
+					log.Println(location.MaerskID)
 					if location.MaerskID == "" {
 						locationsWithoutMaerskID = append(locationsWithoutMaerskID, location.Unlocode)
 					}
