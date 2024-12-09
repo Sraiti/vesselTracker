@@ -1762,3 +1762,857 @@
   "timestamp": "2024-12-10T00:15:51+01:00",
   "uptime": "25m49.967647417s"
 }
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786159431411000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 205,
+    "messages_saved": 205,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:15:59+01:00",
+  "uptime": "25m58.030994667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786176500121000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 206,
+    "messages_saved": 206,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:16:16+01:00",
+  "uptime": "26m15.100152959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786188072499000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 207,
+    "messages_saved": 207,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:16:28+01:00",
+  "uptime": "26m26.672074917s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786200871755000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 208,
+    "messages_saved": 208,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:16:40+01:00",
+  "uptime": "26m39.472434542s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786211349816000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 209,
+    "messages_saved": 209,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:16:51+01:00",
+  "uptime": "26m49.951208959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786219303547000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 210,
+    "messages_saved": 210,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:16:59+01:00",
+  "uptime": "26m57.903311375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786220893226000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 211,
+    "messages_saved": 211,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:00+01:00",
+  "uptime": "26m59.492825584s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786222786405000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 212,
+    "messages_saved": 212,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:02+01:00",
+  "uptime": "27m1.388769042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786231523219000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 213,
+    "messages_saved": 213,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:11+01:00",
+  "uptime": "27m10.125173542s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786235157227000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 214,
+    "messages_saved": 214,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:15+01:00",
+  "uptime": "27m13.756854s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786236543898000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 215,
+    "messages_saved": 215,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:16+01:00",
+  "uptime": "27m15.143159709s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786251195743000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 216,
+    "messages_saved": 216,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:31+01:00",
+  "uptime": "27m29.79667575s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786251431527000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 217,
+    "messages_saved": 217,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:31+01:00",
+  "uptime": "27m30.031093167s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786252826630000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 218,
+    "messages_saved": 218,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:32+01:00",
+  "uptime": "27m31.425985125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786254634370000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 219,
+    "messages_saved": 219,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:34+01:00",
+  "uptime": "27m33.233521667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786260881139000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 220,
+    "messages_saved": 220,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:40+01:00",
+  "uptime": "27m39.480315s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786271425906000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 221,
+    "messages_saved": 221,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:51+01:00",
+  "uptime": "27m50.025957084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786279411349000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 222,
+    "messages_saved": 222,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:17:59+01:00",
+  "uptime": "27m58.010842917s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786283822643000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 223,
+    "messages_saved": 223,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:03+01:00",
+  "uptime": "28m2.421981084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786287404168000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 224,
+    "messages_saved": 224,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:07+01:00",
+  "uptime": "28m6.003204834s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786289059257000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 225,
+    "messages_saved": 225,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:09+01:00",
+  "uptime": "28m7.658304875s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786318768848000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 226,
+    "messages_saved": 226,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:38+01:00",
+  "uptime": "28m37.368344584s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786330580907000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 227,
+    "messages_saved": 227,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:50+01:00",
+  "uptime": "28m49.1801255s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786339290920000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 228,
+    "messages_saved": 228,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:18:59+01:00",
+  "uptime": "28m57.890054459s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786344229344000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 229,
+    "messages_saved": 229,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:04+01:00",
+  "uptime": "29m2.828810959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786349152512000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 230,
+    "messages_saved": 230,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:09+01:00",
+  "uptime": "29m7.752247334s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786353420122000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 231,
+    "messages_saved": 231,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:13+01:00",
+  "uptime": "29m12.019592959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786353478291000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 232,
+    "messages_saved": 232,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:13+01:00",
+  "uptime": "29m12.077033042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786356418599000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 233,
+    "messages_saved": 233,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:16+01:00",
+  "uptime": "29m15.017305334s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786372394215000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 234,
+    "messages_saved": 234,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:32+01:00",
+  "uptime": "29m30.995083959s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786392236173000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 235,
+    "messages_saved": 235,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:52+01:00",
+  "uptime": "29m50.83681075s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786399326369000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 236,
+    "messages_saved": 236,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:19:59+01:00",
+  "uptime": "29m57.925260917s"
+}
+{
+  "event_type": "statistics",
+  "message": "Periodic statistics update",
+  "messages_per_minute": 7.866660149903547,
+  "save_success_rate": 100,
+  "stats": {
+    "errors": 0,
+    "messages_received": 236,
+    "messages_saved": 236,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:01+01:00",
+  "uptime": "30m0.001504625s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786404241690000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 237,
+    "messages_saved": 237,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:04+01:00",
+  "uptime": "30m2.842332042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786421520926000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 238,
+    "messages_saved": 238,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:21+01:00",
+  "uptime": "30m20.119726084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786427992727000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 239,
+    "messages_saved": 239,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:28+01:00",
+  "uptime": "30m26.600262417s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786432170556000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 240,
+    "messages_saved": 240,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:32+01:00",
+  "uptime": "30m30.7708055s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786432785905000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 241,
+    "messages_saved": 241,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:32+01:00",
+  "uptime": "30m31.384462417s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786457422053000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 242,
+    "messages_saved": 242,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:20:57+01:00",
+  "uptime": "30m56.020341042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786468561432000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 243,
+    "messages_saved": 243,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:08+01:00",
+  "uptime": "31m7.160352292s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786487797374000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 244,
+    "messages_saved": 244,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:27+01:00",
+  "uptime": "31m26.39557025s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786494764305000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 245,
+    "messages_saved": 245,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:34+01:00",
+  "uptime": "31m33.362751667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786499159836000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 246,
+    "messages_saved": 246,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:39+01:00",
+  "uptime": "31m37.759248334s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786502174922000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 247,
+    "messages_saved": 247,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:42+01:00",
+  "uptime": "31m40.77344275s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786519967845000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 248,
+    "messages_saved": 248,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:21:59+01:00",
+  "uptime": "31m58.56724425s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786528561202000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 249,
+    "messages_saved": 249,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:22:08+01:00",
+  "uptime": "32m7.160113375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786536669915000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 250,
+    "messages_saved": 250,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:22:16+01:00",
+  "uptime": "32m15.269063209s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786547403571000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 251,
+    "messages_saved": 251,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:22:27+01:00",
+  "uptime": "32m26.002582125s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786551214395000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 252,
+    "messages_saved": 252,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:22:31+01:00",
+  "uptime": "32m29.81672175s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786559171317000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 253,
+    "messages_saved": 253,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:22:39+01:00",
+  "uptime": "32m37.769533042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786581049965000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 254,
+    "messages_saved": 254,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:01+01:00",
+  "uptime": "32m59.648092375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786588563238000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 255,
+    "messages_saved": 255,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:08+01:00",
+  "uptime": "33m7.161584375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786591758626000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 256,
+    "messages_saved": 256,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:11+01:00",
+  "uptime": "33m10.356688709s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786607253206000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 257,
+    "messages_saved": 257,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:27+01:00",
+  "uptime": "33m25.852485084s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786607711740000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 258,
+    "messages_saved": 258,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:27+01:00",
+  "uptime": "33m26.311633s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786611206729000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 259,
+    "messages_saved": 259,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:31+01:00",
+  "uptime": "33m29.804414s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786611244198000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 260,
+    "messages_saved": 260,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:31+01:00",
+  "uptime": "33m29.841875375s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786611401185000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 261,
+    "messages_saved": 261,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:31+01:00",
+  "uptime": "33m29.998864667s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786612808810000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "ShipStaticData",
+  "stats": {
+    "errors": 0,
+    "messages_received": 262,
+    "messages_saved": 262,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:32+01:00",
+  "uptime": "33m31.406935042s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786614132888000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 263,
+    "messages_saved": 263,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:34+01:00",
+  "uptime": "33m32.731645s"
+}
+{
+  "event_type": "message_saved",
+  "filename": "ais_data/2024-12-10/00/1733786619280128000.json",
+  "message": "Successfully saved AIS message",
+  "message_type": "PositionReport",
+  "stats": {
+    "errors": 0,
+    "messages_received": 264,
+    "messages_saved": 264,
+    "reconnects": 0
+  },
+  "timestamp": "2024-12-10T00:23:39+01:00",
+  "uptime": "33m37.877900292s"
+}
