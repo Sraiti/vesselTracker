@@ -4,9 +4,10 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
- 
+
 	"log"
 	"net/http"
+	"net/url"
 	"strconv"
 	"time"
 
@@ -56,6 +57,26 @@ func saveScheduleToDB(db *sql.DB, data []models.ReducedOceanProduct) {
 					transit_time
 				) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, 
 						  $15, $16, $17, $18, $19, $20, $21, $22)
+				ON CONFLICT ( origin_port_un_lo_code, destination_port_un_lo_code, 
+							departure_vessel_imo_number, departure_date_time, arrival_date_time) 
+				DO UPDATE SET
+					carrier_product_id = $1,
+					product_valid_to_date = $2,
+					product_valid_from_date = $3,
+					origin_city = $4,
+					origin_name = $5, 
+					origin_country = $6,
+					origin_carrier_site_geo_id = $8,
+					origin_carrier_city_geo_id = $9,
+					destination_city = $10,
+					destination_name = $11,
+					destination_country = $12,
+					destination_carrier_site_geo_id = $14,
+					destination_carrier_city_geo_id = $15,
+					departure_vessel_carrier_code = $16,
+					departure_vessel_name = $17,
+					departure_vessel_mmsi = $19,
+					transit_time = $22
 				RETURNING id`,
 			product.CarrierProductID, validTo, validFrom, product.OriginCity,
 			product.OriginName, product.OriginCountry, product.OriginPortUnLoCode,
@@ -87,7 +108,22 @@ func saveScheduleToDB(db *sql.DB, data []models.ReducedOceanProduct) {
 					destination_port_un_lo_code, destination_carrier_site_geo_id,
 					destination_carrier_city_geo_id
 				) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,
-						  $14, $15, $16, $17, $18, $19)`,
+						  $14, $15, $16, $17, $18, $19)
+				ON CONFLICT ( vessel_imo_number, departure_date_time, arrival_date_time)
+				DO UPDATE SET	
+					vessel_carrier_code = $4,
+					vessel_name = $5,
+					vessel_mmsi = $7,
+					origin_city = $8,
+					origin_name = $9,
+					origin_country = $10,
+					origin_carrier_site_geo_id = $12,
+					origin_carrier_city_geo_id = $13,
+					destination_city = $14,
+					destination_name = $15,
+					destination_country = $16,
+					destination_carrier_site_geo_id = $18,
+					destination_carrier_city_geo_id = $19`,
 				oceanProductID, leg.DepartureDateTime.Time, leg.ArrivalDateTime.Time,
 				leg.VesselCarrierCode, leg.VesselName, leg.VesselIMONumber,
 				leg.VesselMMSI, leg.OriginCity, leg.OriginName, leg.OriginCountry,
@@ -160,6 +196,26 @@ func FetchHandler(database *sql.DB) http.HandlerFunc {
 			}()
 		}
 
+		if len(locations[0].Location) == 0 || len(locations[1].Location) == 0 {
+			log.Println("Missing coordinates in background")
+			go func() {
+				log.Println("Enriching missing coordinates in background")
+				for _, loc := range locations {
+					if len(loc.Location) == 0 {
+						lat, lon, err := GetLocationCoordinates(loc)
+						if err != nil {
+							log.Printf("Error getting coordinates for %s: %v", loc.Unlocode, err)
+							continue
+						}
+
+						if err := db.UpdateLocationCoordinates(database, loc.Unlocode, lat, lon); err != nil {
+							log.Printf("Error updating coordinates for %s: %v", loc.Unlocode, err)
+						}
+					}
+				}
+			}()
+		}
+
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
@@ -189,13 +245,11 @@ func FetchHandler(database *sql.DB) http.HandlerFunc {
 
 		// Prepare response
 		response := struct {
-			RawData          models.MaerskPointToPoint    `json:"rawData"`
-			ReducedProducts  []models.ReducedOceanProduct `json:"reducedProducts"`
+			Schedules        []models.ReducedOceanProduct `json:"schedules"`
 			VesselsMMSI      []string                     `json:"vesselsMMSI"`
 			VesselsIMONumber []string                     `json:"vesselsIMONumber"`
 		}{
-			RawData:         data,
-			ReducedProducts: reducedProducts,
+			Schedules: reducedProducts,
 			VesselsIMONumber: func() []string {
 				imoSet := make(map[string]struct{})
 				for _, product := range reducedProducts {
@@ -275,6 +329,54 @@ func updateVesselsInDB(database *sql.DB, vessels map[string]db.Vessel) {
 	}
 }
 
+type NominatimResponse struct {
+	Lat string `json:"lat"`
+	Lon string `json:"lon"`
+}
+
+func GetLocationCoordinates(location db.Location) (float64, float64, error) {
+	// Build search query using location name and country
+	searchQuery := url.QueryEscape(fmt.Sprintf("%s, %s", location.Name, location.CountryCode))
+	url := fmt.Sprintf("https://nominatim.openstreetmap.org/search?q=%s&format=json&limit=1", searchQuery)
+
+	client := &http.Client{Timeout: 10 * time.Second}
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return 0, 0, err
+	}
+
+	// Required by Nominatim's terms of use
+	req.Header.Set("User-Agent", "VesselTracker/1.0")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return 0, 0, err
+	}
+	defer resp.Body.Close()
+
+	var results []NominatimResponse
+	log.Println("GetLocationCoordinates")
+	log.Println("Response:", resp.Body)
+	if err := json.NewDecoder(resp.Body).Decode(&results); err != nil {
+		return 0, 0, err
+	}
+
+	if len(results) == 0 {
+		return 0, 0, fmt.Errorf("no coordinates found for location")
+	}
+
+	lat, err := strconv.ParseFloat(results[0].Lat, 64)
+	if err != nil {
+		return 0, 0, err
+	}
+
+	lon, err := strconv.ParseFloat(results[0].Lon, 64)
+	if err != nil {
+		return 0, 0, err
+	}
+
+	return lat, lon, nil
+}
 func extractReducedOceanProducts(database *sql.DB, data models.MaerskPointToPoint) []models.ReducedOceanProduct {
 	collectionStart := time.Now()
 
@@ -336,36 +438,24 @@ func GetVesselRouteGeoJSON(database *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		// Define some vibrant colors for variety
-		colors := []string{
-			"#FF0000", // Red
-			"#00FF00", // Green
-			"#0000FF", // Blue
-			"#FF00FF", // Magenta
-			"#00FFFF", // Cyan
-			"#FFA500", // Orange
-			"#9400D3", // Dark Violet
-			"#FF1493", // Deep Pink
-		}
-
 		// Create features slice to store all points
-		features := []map[string]interface{}{}
+		features := make([]map[string]interface{}, 0, len(positions))
 
 		// Process each position into a GeoJSON feature
-		for i, pos := range positions {
+		for _, pos := range positions {
 			feature := map[string]interface{}{
 				"type": "Feature",
 				"geometry": map[string]interface{}{
 					"type":        "Point",
 					"coordinates": pos,
 				},
-				"properties": map[string]interface{}{
-					"title":         fmt.Sprintf("Point %d", i+1),
-					"marker-color":  colors[2], // Cycle through colors
-					"marker-size":   "medium",
-					"marker-symbol": "circle",
-					"point-number":  i + 1,
-				},
+				// "properties": map[string]interface{}{
+				// 	"title":         fmt.Sprintf("Point %d", i+1),
+				// 	"marker-color":  colors[2], // Cycle through colors
+				// 	"marker-size":   "medium",
+				// 	"marker-symbol": "circle",
+				// 	"point-number":  i + 1,
+				// },
 			}
 			features = append(features, feature)
 		}

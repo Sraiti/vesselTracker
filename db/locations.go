@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 	"time"
 
@@ -48,7 +49,6 @@ func UpsertLocations(db *sql.DB, locations []models.MaerskLocation) error {
 
 func GetLocations(db *sql.DB, unLoCodes []string) ([]Location, error) {
 	log.Println("Getting locations")
-	log.Println(unLoCodes)
 
 	query := `SELECT id, unlocode, name, country_code, is_airport, is_port, is_train_station, created_at, maersk_id 
 			FROM locations 
@@ -80,24 +80,30 @@ func GetLocations(db *sql.DB, unLoCodes []string) ([]Location, error) {
 			return nil, err
 		}
 
-		log.Println("unlocode")
-		log.Println(loc.Unlocode)
-		log.Println("maerskID")
-		log.Println(maerskID)
-		log.Println("valid")
-		log.Println(maerskID.Valid)
-
 		if maerskID.Valid {
 			loc.MaerskID = maerskID.String
 		}
 
 		locations = append(locations, loc)
 	}
+
 	return locations, nil
 }
 
+func UpdateLocationCoordinates(db *sql.DB, unlocode string, latitude, longitude float64) error {
+	_, err := db.Exec(`
+        UPDATE locations 
+        SET location = ST_SetSRID(ST_MakePoint($3, $2), 4326)
+        WHERE unlocode = $1 AND location IS NULL
+    `, unlocode, latitude, longitude)
+
+	if err != nil {
+		return fmt.Errorf("error updating location coordinates: %w", err)
+	}
+	return nil
+}
+
 func AutoComplete(db *sql.DB, text string) ([]Location, error) {
-	// Query matches start of UNLOCODE, country_code, or name (case-insensitive)
 	query := `
 		SELECT id, unlocode, name, country_code, 
 			   is_airport, is_port, is_train_station, created_at,
@@ -110,7 +116,7 @@ func AutoComplete(db *sql.DB, text string) ([]Location, error) {
 		WHERE 
 			unlocode ILIKE $1 OR 
 			country_code ILIKE $1 OR 
-			name ILIKE $1
+			name ILIKE $1 AND is_port = true
 		LIMIT 10
 	`
 

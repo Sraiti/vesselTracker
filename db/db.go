@@ -58,6 +58,7 @@ func InitDB() (*sql.DB, error) {
 			is_train_station BOOLEAN DEFAULT FALSE,
 			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 			maersk_id TEXT,
+			geofence_radius_meters INTEGER DEFAULT 5000, -- 5km
 			UNIQUE(unlocode, name)  -- composite unique constraint,
 		);
 
@@ -85,11 +86,12 @@ func InitDB() (*sql.DB, error) {
 			departure_date_time TIMESTAMP,
 			arrival_date_time TIMESTAMP,
 			transit_time INTEGER,
-			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			UNIQUE (origin_port_un_lo_code, destination_port_un_lo_code, departure_vessel_imo_number, departure_date_time, arrival_date_time)
 		);
 		CREATE TABLE IF NOT EXISTS transport_legs (
 			id SERIAL PRIMARY KEY,
-			ocean_product_id INTEGER REFERENCES ocean_products(id) ON DELETE CASCADE,
+			ocean_product_id INTEGER REFERENCES ocean_products(id),
 			departure_date_time TIMESTAMP,
 			arrival_date_time TIMESTAMP,
 			vessel_carrier_code TEXT,
@@ -108,7 +110,8 @@ func InitDB() (*sql.DB, error) {
 			destination_port_un_lo_code TEXT,
 			destination_carrier_site_geo_id TEXT,
 			destination_carrier_city_geo_id TEXT,
-			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			UNIQUE (vessel_imo_number, departure_date_time, arrival_date_time)
 		);
 
 
